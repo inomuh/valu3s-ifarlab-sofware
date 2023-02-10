@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="robot_name" default="rokos" />
+  <arg name="config_path" default="$(find right_rokos_moveit_config)"/>
+  <arg name="scene" default="false" />
+  <arg name="scene_filename" default="scene.scene" />
+
+  <group ns="$(arg robot_name)">
+    <rosparam command="load" file="$(arg config_path)/config/joint_names.yaml"/>
+
+    <include file="$(arg config_path)/launch/planning_context.launch" >
+      <arg name="load_robot_description" value="true" />
+    </include>
+
+    <!--
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+      <param name="/use_gui" value="false"/>
+      <rosparam param="/source_list">[/joint_states]</rosparam>
+    </node>
+    -->
+
+    <include file="$(arg config_path)/launch/move_group.launch">
+      <arg name="publish_monitored_planning_scene" value="true" />
+    </include>
+
+    <!--
+    <include file="$(arg config_path)/launch/moveit_rviz.launch">
+      <arg name="config" value="true"/>
+    </include>
+    -->
+
+    <group if="$(arg scene)">
+
+      <include file="$(find srvt_moveit)/launch/scene.launch">
+        <arg name="s_path" value="$(arg config_path)"/>
+        <arg name="s_filename" value="$(arg scene_filename)"/>
+      </include>
+
+    </group>
+
+  </group>
+  
+</launch>

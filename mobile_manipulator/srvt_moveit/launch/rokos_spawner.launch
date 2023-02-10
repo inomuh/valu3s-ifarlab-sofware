@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>	
+
+  <arg name="robot_name" default="rokos" />
+  <arg name="robot_position" default="-x 0.0 -y 0.0 -z 0.01" /> 
+  <arg name="urdf_path" default="$(find rokos_description)/urdf/left_rokos.urdf"/><!--default-->
+  <arg name="config_path" default="$(find left_rokos_moveit_config)"/>
+
+
+  <group ns="$(arg robot_name)">
+
+    <param name="robot_description" textfile="$(arg urdf_path)" />
+
+    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg robot_name) -param robot_description $(arg robot_position) "
+      respawn="false" output="screen" />
+
+    <!-- 
+    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot -x 0 -y 0 -z 0"
+      respawn="false" output="screen" /> -->
+
+      <!--  -->
+    <node name="joint_state_controller_spawner" pkg="controller_manager" type="controller_manager"
+        args="spawn joint_state_controller" respawn="false" output="screen" />
+
+
+    <include file="$(arg config_path)/launch/ros_controllers.launch"/>
+
+
+<!-- RQT Joint Trajectory Controller -->
+    <!-- -->
+    <node name="rqt_jtc" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>
+
+  </group>
+
+</launch>

@@ -1,0 +1,118 @@
+---
+
+Right_Rokos:
+
+  - Task:
+      Task_ID: 35269
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: 0.2
+        Y: -0.5
+        Z: 1.16
+        C_AX: -10.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35270
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: 0.5
+        Y: -0.5
+        Z: 1.16
+        C_AX: -10.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35271
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: 1.0
+        Y: -0.5
+        Z: 1.16
+        C_AX: -10.000
+        C_AZ: -10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35272
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: 1.5
+        Y: -0.5
+        Z: 1.16
+        C_AX: -10.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35273
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: 2.0
+        Y: -0.5
+        Z: 1.16
+        C_AX: -10.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5

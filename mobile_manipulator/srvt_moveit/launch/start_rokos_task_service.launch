@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<node pkg="srvt_moveit" type="task_service_node.py" name="task_service_node" output="screen" >
+		<rosparam file="$(find srvt_moveit)/params/Right_Rokos.yaml" command="load"/>
+		<!--<rosparam file="$(find srvt_moveit)/params/left_rokos_task.yaml" command="load"/>-->
+		<rosparam file="$(find srvt_moveit)/params/rokos_task.yaml" command="load"/>
+	</node>
+
+</launch>

@@ -1,0 +1,3132 @@
+---
+
+Right_Rokos:
+
+  - Task:
+      Task_ID: 35269
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.840
+        Z: 1.903
+        C_AX: -10.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35270
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.240
+        Z: 2.503
+        C_AX: -10.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35271
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.240
+        Z: 2.803
+        C_AX: -10.000
+        C_AZ: -10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35272
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.840
+        Z: 2.803
+        C_AX: -10.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35273
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.540
+        Z: 3.103
+        C_AX: -10.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35274
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.840
+        Z: 3.403
+        C_AX: -10.000
+        C_AZ: -10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35275
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ARKA'
+
+      Position:
+        X: -7.800
+        Y: -2.840
+        Z: 3.703
+        C_AX: -0.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35277
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -6.621
+        Y: -1.146
+        Z: 3.703
+        C_AX: -90.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35279
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -6.321
+        Y: -2.840
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35280
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -6.021
+        Y: -2.840
+        Z: 0.641
+        C_AX: -10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35282
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -6.021
+        Y: -1.146
+        Z: 2.803
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35283
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -5.721
+        Y: -1.146
+        Z: 2.203
+        C_AX: -90.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35287
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -1.940
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35288
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -1.940
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35289
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -1.940
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35290
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -1.940
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35291
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.240
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35292
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35293
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35294
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35295
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35296
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35297
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35298
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35299
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.840
+        Z: 3.491
+        C_AX: -40.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35300
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -5.071
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35301
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -4.771
+        Y: -2.540
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 180.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35302
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -4.771
+        Y: -2.540
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 130.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35303
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -4.771
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 180.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35304
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -4.771
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35305
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_3'
+
+      Position:
+        X: -4.771
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35307
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -4.821
+        Y: -1.146
+        Z: 2.203
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35309
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -4.521
+        Y: -2.840
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35310
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -4.221
+        Y: -2.540
+        Z: 0.641
+        C_AX: -10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35312
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -3.921
+        Y: -1.146
+        Z: 1.903
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35314
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.871
+        Y: -2.240
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 140.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35315
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.871
+        Y: -2.240
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35316
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.871
+        Y: -2.240
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35317
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.871
+        Y: -2.540
+        Z: 3.491
+        C_AX: -70.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35318
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.871
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35319
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.571
+        Y: -2.240
+        Z: 3.491
+        C_AX: -30.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35320
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.571
+        Y: -2.240
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35321
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.571
+        Y: -2.540
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35322
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.271
+        Y: -1.940
+        Z: 3.491
+        C_AX: -70.000
+        C_AZ: 50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35323
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.271
+        Y: -2.240
+        Z: 3.491
+        C_AX: -20.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35324
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.271
+        Y: -2.840
+        Z: 3.491
+        C_AX: -40.000
+        C_AZ: -90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35325
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -3.271
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -70.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35326
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_4'
+
+      Position:
+        X: -2.971
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 140.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35328
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -3.621
+        Y: -2.840
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35329
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -2.721
+        Y: -2.540
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35330
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -2.721
+        Y: -2.840
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35332
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -2.421
+        Y: -1.146
+        Z: 1.603
+        C_AX: -90.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35333
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -2.121
+        Y: -1.146
+        Z: 2.803
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35335
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -1.940
+        Z: 3.491
+        C_AX: -50.000
+        C_AZ: 60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35336
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -1.940
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35337
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -2.240
+        Z: 3.491
+        C_AX: -30.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35338
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35339
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35340
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -2.540
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35341
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35342
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -2.071
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35343
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -1.771
+        Y: -2.240
+        Z: 3.491
+        C_AX: -30.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35344
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -1.771
+        Y: -2.240
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35345
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -1.771
+        Y: -2.540
+        Z: 3.491
+        C_AX: -20.000
+        C_AZ: -20.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35346
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_5'
+
+      Position:
+        X: -1.771
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35348
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -1.221
+        Y: -2.540
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35349
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -0.921
+        Y: -2.240
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35351
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -0.921
+        Y: -1.146
+        Z: 3.103
+        C_AX: -90.000
+        C_AZ: -10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35352
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: -0.621
+        Y: -1.146
+        Z: 2.503
+        C_AX: -90.000
+        C_AZ: -10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35354
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.521
+        Y: -1.940
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35355
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.521
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35356
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.521
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35357
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.521
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35358
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.521
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35359
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.221
+        Y: -1.940
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35360
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.221
+        Y: -1.940
+        Z: 3.491
+        C_AX: -40.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35361
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.221
+        Y: -2.240
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35362
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.221
+        Y: -2.540
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35363
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.221
+        Y: -2.840
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: 30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35364
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: -0.221
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -70.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35365
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: 0.079
+        Y: -2.540
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35366
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: 0.079
+        Y: -2.540
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35367
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_6'
+
+      Position:
+        X: 0.079
+        Y: -2.840
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35369
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: -0.321
+        Y: -2.840
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35371
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: 0.279
+        Y: -1.146
+        Z: 1.603
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35373
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 0.579
+        Y: -2.540
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35374
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 0.879
+        Y: -2.840
+        Z: 0.641
+        C_AX: -10.000
+        C_AZ: 90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35376
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_7'
+
+      Position:
+        X: 1.029
+        Y: -2.240
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35377
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_7'
+
+      Position:
+        X: 1.029
+        Y: -2.540
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35378
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_7'
+
+      Position:
+        X: 1.029
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35379
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_7'
+
+      Position:
+        X: 1.029
+        Y: -2.540
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35380
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_7'
+
+      Position:
+        X: 1.029
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35381
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_7'
+
+      Position:
+        X: 1.329
+        Y: -2.540
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35386
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: 2.079
+        Y: -1.146
+        Z: 2.803
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35388
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -1.940
+        Z: 3.491
+        C_AX: -70.000
+        C_AZ: 50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35389
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.240
+        Z: 3.491
+        C_AX: -20.000
+        C_AZ: -30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35390
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.540
+        Z: 3.491
+        C_AX: -70.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35391
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.540
+        Z: 3.491
+        C_AX: -80.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35392
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -20.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35393
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -70.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35394
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.840
+        Z: 3.491
+        C_AX: -50.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35395
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.840
+        Z: 3.491
+        C_AX: -60.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35396
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.229
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35397
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.529
+        Y: -1.940
+        Z: 3.491
+        C_AX: -30.000
+        C_AZ: -60.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35398
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.529
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35399
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.529
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: -70.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35400
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.829
+        Y: -1.940
+        Z: 3.491
+        C_AX: -30.000
+        C_AZ: 30.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35401
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.829
+        Y: -2.840
+        Z: 3.491
+        C_AX: -30.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35402
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.829
+        Y: -2.840
+        Z: 3.491
+        C_AX: -40.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35403
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 2.829
+        Y: -2.840
+        Z: 3.491
+        C_AX: -90.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35404
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 3.129
+        Y: -2.540
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: 40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35405
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 3.129
+        Y: -2.540
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -50.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35406
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 3.129
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35407
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 3.129
+        Y: -2.840
+        Z: 3.491
+        C_AX: -0.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35408
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 3.129
+        Y: -2.840
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: 20.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35409
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'IC_8'
+
+      Position:
+        X: 3.129
+        Y: -2.840
+        Z: 3.491
+        C_AX: -10.000
+        C_AZ: -40.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35411
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 2.379
+        Y: -2.840
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35412
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 2.379
+        Y: -2.840
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35413
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 2.379
+        Y: -2.840
+        Z: 0.641
+        C_AX: -10.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35414
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 2.679
+        Y: -2.240
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35415
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 3.279
+        Y: -2.240
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35416
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 3.279
+        Y: -2.840
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 90.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35418
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: 3.279
+        Y: -1.146
+        Z: 1.903
+        C_AX: -90.000
+        C_AZ: 10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35420
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 3.879
+        Y: -2.840
+        Z: 0.641
+        C_AX: -0.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35421
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 4.179
+        Y: -2.840
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 100.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35422
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 4.179
+        Y: -2.840
+        Z: 0.641
+        C_AX: 10.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35424
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: 4.179
+        Y: -1.146
+        Z: 3.403
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35426
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ALT'
+
+      Position:
+        X: 4.479
+        Y: -1.940
+        Z: 0.641
+        C_AX: -10.000
+        C_AZ: 80.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35428
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: 4.479
+        Y: -1.146
+        Z: 2.503
+        C_AX: -90.000
+        C_AZ: -10.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35429
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'DIS'
+
+      Position:
+        X: 4.479
+        Y: -1.146
+        Z: 3.103
+        C_AX: -90.000
+        C_AZ: -0.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35431
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ON'
+
+      Position:
+        X: 6.079
+        Y: -2.840
+        Z: 1.603
+        C_AX: 10.000
+        C_AZ: 170.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35432
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ON'
+
+      Position:
+        X: 6.079
+        Y: -2.840
+        Z: 2.203
+        C_AX: 10.000
+        C_AZ: 170.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35433
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ON'
+
+      Position:
+        X: 6.079
+        Y: -2.840
+        Z: 2.503
+        C_AX: -0.000
+        C_AZ: 190.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35434
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ON'
+
+      Position:
+        X: 6.079
+        Y: -1.940
+        Z: 3.103
+        C_AX: 10.000
+        C_AZ: 190.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35435
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ON'
+
+      Position:
+        X: 6.079
+        Y: -2.840
+        Z: 3.403
+        C_AX: -0.000
+        C_AZ: 190.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+
+  - Task:
+      Task_ID: 35436
+
+      Vehicle_CODE: '13M38_1'
+
+      Mode: 1
+
+      Tag: 'ON'
+
+      Position:
+        X: 6.079
+        Y: -2.840
+        Z: 3.703
+        C_AX: -0.000
+        C_AZ: 170.000
+
+      Queue:
+        X: 1
+        Y: 3
+        Z: 2
+        C_AX: 4
+        C_AZ: 5
+

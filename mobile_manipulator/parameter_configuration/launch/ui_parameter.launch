@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<node name="ui_parameters" pkg="parameter_configuration" type="ui_configuration.py"/>
+</launch>

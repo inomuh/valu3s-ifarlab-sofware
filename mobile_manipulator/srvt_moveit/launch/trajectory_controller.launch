@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>	
+
+  <arg name="robot_name" default="/rokos"/> 
+
+  <group ns="$(arg robot_name)">
+
+    <node name="rqt_jtc" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller"/>
+
+  </group>
+
+</launch>

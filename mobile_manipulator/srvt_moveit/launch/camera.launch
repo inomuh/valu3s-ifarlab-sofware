@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>	
+
+  <arg name="robot_name" default="rokos" />
+
+  <group ns="$(arg robot_name)">
+
+    <node name="image_view_color" pkg="image_view" type="image_view">,
+    	<remap from="image" to="color_camera/image_raw"/>
+    </node>
+    <node name="image_view_tof" pkg="image_view" type="image_view">,
+    	<remap from="image" to="/tof_camera/depth/image_raw"/>
+    </node>
+  </group>
+
+</launch>

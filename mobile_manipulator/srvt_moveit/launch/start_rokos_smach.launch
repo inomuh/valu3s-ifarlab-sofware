@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!--<node pkg="srvt_moveit" type="rokos_left_smach_node.py" name="rokos_left_smach_node" output="screen" />-->
+
+	<node pkg="srvt_moveit" type="rokos_right_smach_node.py" name="system_smach_node" output="screen" />
+	<node pkg="srvt_moveit" type="image_service_node.py" name="image_service_node" output="screen" />
+</launch>

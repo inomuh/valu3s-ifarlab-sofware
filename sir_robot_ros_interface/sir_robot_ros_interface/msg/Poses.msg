@@ -1,0 +1,1 @@
+sir_robot_ros_interface/Pose[] pose_list

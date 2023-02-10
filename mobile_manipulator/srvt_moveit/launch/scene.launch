@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="s_path" default="$(find right_rokos_moveit_config)"/> <!--default-->
+    <arg name="s_filename" default="scene.scene"/>
+
+    <arg name="scene_file" value="$(arg s_path)/scenes/$(arg s_filename)"/>
+
+    <node pkg="moveit_ros_planning" type="moveit_publish_scene_from_text" name="publish_moveit_scene" args="$(arg scene_file)" output="screen"/>
+
+</launch>

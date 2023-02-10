@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>	
+  <include file="$(find srvt_moveit)/launch/rokos_spawner.launch">
+    <arg name="robot_name" value="/left_rokos"/>
+    <arg name="robot_position" value="-x 7.94 -y -5.04 -z 0.0 -R 0 -P 0 -Y 0"/>
+    <arg name="urdf_path" default="$(find rokos_description)/urdf/left_rokos.urdf"/>
+    <arg name="config_path" default="$(find left_rokos_moveit_config)"/>
+  </include>
+  
+  <include file="$(find srvt_moveit)/launch/rokos_spawner.launch">
+    <arg name="robot_name" value="/right_rokos"/>
+    <arg name="robot_position" value="-x 7.94 -y 1.28 -z 0.0 -R 0 -P 0 -Y 0.0" />
+    <arg name="urdf_path" default="$(find rokos_description)/urdf/right_rokos.urdf"/>
+    <arg name="config_path" default="$(find right_rokos_moveit_config)"/>
+  </include>
+
+</launch>

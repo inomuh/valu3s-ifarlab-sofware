@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node name="emergency" pkg="valu3s_tools" type="emergency_publisher.py"/>	
+	<node name="mobile_status" pkg="valu3s_tools" type="robot_status_publisher.py"/>
+	<node name="mp_action_server" pkg="mobile_manipulator_action" type="mp_server"/>
+	<node name="mp_status_service" pkg="mobile_manipulator_action" type="mobile_platform_service.py"/>
+	<node name="acceleration_service" pkg="mobile_manipulator_action" type="acceleration_service.py"/>
+	<node name="velocity_service" pkg="mobile_manipulator_action" type="velocity_service.py"/>
+	<include file="$(find parameter_configuration)/launch/ui_parameter.launch"/>
+	
+</launch>

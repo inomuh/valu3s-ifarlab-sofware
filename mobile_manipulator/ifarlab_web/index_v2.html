@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rokos Chasis Inspection</title>
+    <meta property="og:title" content="Rokos Chasis Inspection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/jquery.min.js"></script>      
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div>
+      <link href="./css/home.css" rel="stylesheet" />
+      <link href="./css/home1.css" rel="stylesheet" />
+
+      <div id="maindiv" class="home-container">
+        <div class="row navarea text-center">
+          <div class="col-sm-4 col-xs-4">
+            <img alt="logo" src="img/ifarlab_logo.png" class="home-logo-ifarlab" />
+          </div>
+          <div class="col-sm-4 col-xs-4">
+            <span class="text-header">CHASSIS INSPECTION SYSTEM</span>
+          </div>          
+          <div class="col-sm-4 col-xs-4">
+            <img alt="logo" src="img/value3s.png" class="home-logo-value3s" />
+          </div>          
+        </div>
+        <div class="container">
+          <div class="row col-border">
+            <div class="row text-center bottom-border">
+              <div class="home-text11">Robot Configuration</div>
+            </div>
+            <div calss="row text-center" style="padding-top: 24px;">
+              <!--<div class="col-sm-6">
+                <div class="row text-center" >
+                  <div class="col-sm-6 col-xs-6">
+                    <label class="config-label">Rate</label>
+                  </div>                
+                  <div class="col-sm-6 col-xs-6">
+                    <input type="number" placeholder=10 id="mr_ui_rate" class="input"/>
+                  </div>                 
+                </div>
+              </div>-->
+              <div class="col">
+                <div class="row text-center">
+                  <div class="col">
+                    <label class="config-label">Speed</label>
+                  </div>                
+                  <div class="col">
+                    <input type="number" placeholder=0.1 id="mr_ui_velocity" class="input" min="0.05" style="width:25%;text-align: center;"/>
+                  </div>
+                </div>   
+              </div>
+            </div>
+            <div class="row text-center">
+              <button id="config_button" class="button apply-button">
+                Apply
+              </button>
+            </div> 
+          </div>
+          <div class="row text-center home1-container02 col-border">
+            <div class="col-sm-4 col-xs-4">
+              <span class="home-text17">Chassis Inspection</span>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <label class="switch">
+                <input type="checkbox" id="toggle-button">
+                <span class="slider round" onclick="toggle()"></span>
+              </label>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <span class="home-text17">Manuel Movement</span>
+            </div>
+          </div>
+          <div class="row col-border">
+            <div class="col-sm-6">
+              <div id="tasktracking" class="container-fluid" >
+                <div class="row">
+                  <div class="col bottom-border" >
+                    <div class="home-text11" >Task Tracking</div>
+                  </div>
+                </div>
+                <div class="row" style="margin-top: 24px;">
+                  <div class="col-sm-6 col-xs-6">
+                    <span class="home-text17">Task Status :</span>
+                  </div>
+                  <div class="col-sm-6 col-xs-6">
+                    <input type="text" id="task_status" class="home-textinput input"/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-xs-6">
+                    <span class="home-text17">Task List :</span>
+                  </div>
+                  <div class="col-sm-6 col-xs-6">
+                    <ul id="tasklist" class="home-ul list"></ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6 col-xs-6">
+                    <span class="home-text17">Active Task ID :</span>
+                  </div>
+                  <div class="col-sm-6 col-xs-6">
+                    <input type="text" placeholder="" id="task_id" class="home-textinput1 input"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6" >
+              <div id="mr_motion" class="container-fluid col-right-border">
+                <div class="row">
+                  <div class="col bottom-border">
+                    <div class="home-text11">Manuel Controlling</div>
+                  </div>  
+                </div>
+                <div class="row" style="margin-top: 24px;">
+                  <!-- <div class="col-sm-4 col-xs-4">
+                    <div class="row text-center" style="margin-bottom: 16px;">
+                      <span class="home1-text21">Manuel Positioning</span>
+                    </div>
+                    <div class="row">
+                      <select id="mrposition" required="" class="home1-select center-block" onchange="slctPose()" style="margin-bottom:4px">
+                        <option value="Home">Home</option>
+                        <option value="End">End</option>
+                        <option value="Task">Task</option>
+                      </select>                
+                    </div>
+                    <div class="row">
+                      <input type="text" id="mrposition_taskid" placeholder="Task ID" class="home1-textinput3 input center-block" />
+                    </div>
+                    <div class="row">
+                      <button id="mrposition_button" class="home1-button button center-block" style="margin-top: 4px;">
+                        Button
+                      </button>
+                    </div>
+                  </div> -->
+                  <div class="col-sm-4 col-xs-4">
+                    <div class="row text-center" style="margin-bottom: 16px;">
+                      <span class="home1-text21">Manipulator Stop</span>
+                    </div>
+                    <div class="row"  style="margin-bottom: 8px;">
+                      <button id="stop_button" class="home1-button2 button center-block" onclick="manipulator_stop()">
+                        <img src="img/industrial-robot.png" alt="ir" class="image icon-image">
+                      </button>
+                    </div>
+                    <div class="row text-center" style="margin-bottom: 16px;">
+                      <span class="home1-text21">Manipulator Home</span>
+                    </div>
+                    <div class="row"  style="margin-bottom: 8px;">
+                      <button id="stop_button" class="home1-button4 button center-block" onclick="manipulator_release()">
+                        <img src="img/industrial-robot.png" alt="ir" class="image icon-image">
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-xs-4">
+                    <div class="row text-center" style="margin-bottom: 16px;">
+                      <span class="home1-text21">Manuel Drive</span>
+                    </div>
+                    <div class="col">
+                      <div class="row"  style="margin-bottom: 8px;">
+                        <button id="forward_button" class="home1-button1 button center-block" onclick="move_forward()">
+                          <svg viewBox="0 0 1024 1024" class="home1-icon10">
+                            <path
+                              d="M316 658l-60-60 256-256 256 256-60 60-196-196z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="row" style="margin-bottom: 8px;">
+                        <button id="stop_button" class="home1-button2 button center-block" onclick="move_stop()">
+                          <svg
+                            viewBox="0 0 877.7142857142857 1024"
+                            class="home1-icon12">
+                            <path
+                              d="M621.714 676.571v-329.143c0-10.286-8-18.286-18.286-18.286h-329.143c-10.286 0-18.286 8-18.286 18.286v329.143c0 10.286 8 18.286 18.286 18.286h329.143c10.286 0 18.286-8 18.286-18.286zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="row" style="margin-bottom: 8px;">
+                        <button class="home1-button3 button center-block" onclick="move_backward()">
+                          <svg
+                            viewBox="0 0 1024 1024"
+                            id="backward_button"
+                            class="home1-icon14">
+                            <path
+                              d="M316 366l196 196 196-196 60 60-256 256-256-256z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-xs-4">
+                    <div class="row text-center" style="margin-bottom: 16px;">
+                      <span class="home1-text21">Robot Data</span>
+                    </div>
+                    <div class="container-fluid" style="margin: 0px;">
+                      <div class="row">
+                          <span class="home1-text22">Robot Position</span>
+                      </div>
+                      <div class="row" style="margin-bottom:8px;">
+                        <input type="number" value=0 id="text_mr_postion" class="input mr-echo" style="width: 100px;"/>
+                      </div>
+                      <div class="row">
+                          <span class="home1-text22">Robot Velocity</span>
+                      </div>
+                      <div class="row">
+                        <input type="number" id="text_mr_velocity" class="input mr-echo" style="width: 100px;"/>
+                      </div>
+                      <div class="row">
+                          <span class="home1-text22">Robot Status</span>
+                      </div>
+                      <div class="row" style="margin-bottom:8px;">
+                        <input type="text" placeholder="placeholder" id="text_mr_status" class="input mr-echo" style="width: 100px;"/>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-6 col-xs-6">
+                <button id="task_start_button" class="home-button" onclick="start()">
+                  START
+                </button>
+              </div>
+              <div class="col-sm-6 col-xs-6">
+                <button id="emergency_button" class="home-button1">
+                  EMERGENCY STOP
+                </button>
+              </div>
+              <!-- <div class="col-sm-4 col-xs-4">
+                  <button id="task_finish_button" class="home-button button center-block">
+                    FINISH
+                  </button>
+              </div> -->
+            </div>
+  
+          </div>
+
+          <div class="home1-container03">
+            <!-- The Modal -->
+            <div id="emgModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <span class="modal-title">EMERGENCY</span>
+                </div>
+                <div class="modal-body">
+                  <p class="emg-p">Something happened!</p>
+                  <p class="emg-p">Push button to continue.</p>
+                </div>
+                <div class="modal-footer">
+                  <button id="emergency_continue" class="modal-button button">
+                    Continue
+                  </button>
+                </div>
+              </div>
+            </div>   
+          </div>
+          <div class="home1-container03">
+            <!-- The Modal -->
+            <div id="comModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2>Communication Problem</h2>
+                </div>
+                <div class="modal-body">
+                  <label id="com_text" class="emg-p" style="padding:42px">Please refresh page until the message disappears.</label>
+                </div>
+              </div>
+            </div>   
+          </div>
+        </div>        
+      </div>
+    </div> 
+  </body>
+  <script type="text/javascript" src="./js/eventemitter2.min.js"></script>
+  <script type="text/javascript" src="./js/roslib.min.js"></script>  
+  <script type="text/javascript" src="./js/funcs.js"></script>
+</html>
+
+

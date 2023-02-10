@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node name="ui_parameters" pkg="parameter_configuration" type="ui_configuration.py"/>
+	<include file="$(find mobile_manipulator_config_v1)/launch/demo_gazebo.launch"/>
+	<include file="$(find srvt_moveit)/launch/start_rokos_smach_simulation.launch"/>
+	<include file="$(find srvt_moveit)/launch/start_rokos_task_service.launch"/>
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+	<node name="light_curtain" pkg="emergency_pkg" type="ir_emg_node"/>
+	<node name="ui_status_publisher" pkg="srvt_moveit" type="status_publisher.py"/>
+	<node name="emergency" pkg="emergency_pkg" type="emergency_publisher.py"/>	
+	<node name="mobile_status" pkg="emergency_pkg" type="robot_status_publisher.py"/>	
+    <node name="mp_action_server" pkg="mobile_manipulator_action" type="mp_server"/>
+    <node name="mp_status_service" pkg="mobile_manipulator_action" type="mobile_platform_service.py"/>
+    <node name="acceleration_service" pkg="mobile_manipulator_action" type="acceleration_service.py"/>
+    <node name="velocity_service" pkg="mobile_manipulator_action" type="velocity_service.py"/>
+
+</launch>

@@ -1,5 +1,13 @@
 *.vscode/
 *.zip
-sirprojectteam-sirrobotrosinterfacerepo-b8bd8e76bcc6/
-mobile_manipulator/srvt_moveit/scripts/path_planning_and_reading/*.yaml
-mobile_manipulator/srvt_moveit/scripts/path_planning_and_reading/*.csv
+
+# Workspace Related
+CMakeLists.txt
+
+# Application Related
+/sirprojectteam-sirrobotrosinterfacerepo-b8bd8e76bcc6
+/mobile_manipulator/srvt_moveit/log_file/*.csv
+/mobile_manipulator/srvt_moveit/task_log_file/*.txt
+/mobile_manipulator/srvt_moveit/scripts/path_planning_and_reading/*.yaml
+/mobile_manipulator/srvt_moveit/scripts/path_planning_and_reading/*.csv
+/mobile_manipulator/mobile_manipulator_description/meshes/ota/OTA-v0.7.stl

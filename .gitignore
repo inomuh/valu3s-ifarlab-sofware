@@ -1,0 +1,5 @@
+*.vscode/
+*.zip
+sirprojectteam-sirrobotrosinterfacerepo-b8bd8e76bcc6/
+mobile_manipulator/srvt_moveit/scripts/path_planning_and_reading/*.yaml
+mobile_manipulator/srvt_moveit/scripts/path_planning_and_reading/*.csv

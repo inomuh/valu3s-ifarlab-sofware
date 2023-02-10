@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<robot name="khi_rs005l" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find khi_rs_description)/urdf/rs005l_with_capsules_macro.xacro"/>
+
+  <!--xacro:include filename="$(find realsense_gazebo_plugin)/urdf/d435_simulation.xacro"/--> 
+
+  <xacro:include filename="$(find kinect_v2)/urdf/kinect_v2_standalong.urdf.xacro"/> 
+
+  <!-- instantiate rs005l -->
+  <xacro:khi_rs005l prefix="" />
+
+  <!-- Fix rs005l to world -->
+
+  <link name="world"/>
+
+  <joint name="world2base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+</robot>

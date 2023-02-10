@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<robot name="khi_rs005l" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find mobile_manipulator_description)/urdf/khi_rs/rs005l_macro.xacro"/>
+
+  <!--xacro:include filename="$(find realsense_gazebo_plugin)/urdf/khi_rs/d435_simulation.xacro"/--> 
+
+  <!-- Sensor kullanilmayacagi zaman commentlenebilir -->
+  <!--<xacro:include filename="$(find kinect_v2)/urdf/khi_rs/kinect_v2_standalong.urdf/khi_rs.xacro"/> -->
+
+  <!-- instantiate rs005l -->
+  <xacro:khi_rs005l prefix="" />
+
+  <!-- Fix rs005l to world -->
+
+  <link name="world"/>
+
+  <joint name="world2base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+</robot>

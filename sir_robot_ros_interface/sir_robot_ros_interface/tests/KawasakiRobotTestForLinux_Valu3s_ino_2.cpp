@@ -6,6 +6,8 @@
 #include "SIRLinConnection.h"
 #include "SIRTypeDefs.h"
 #include "khi_ota_comm_valu3s.h"
+#include <std_msgs/Int8.h>
+
 #include <sir_robot_ros_interface/ManipulatorPose_ino_2.h>
 #include <iostream>
 #include <fstream>
@@ -21,7 +23,13 @@ using namespace std;
   SIRConnection *con = new SIRLinConnection(logger,"192.168.3.7",11111);
   KawasakiRS005LRobot robot(con, logger,nullptr, MPT_JOINT, MT_P2P);
   //KawasakiRS005LRobot robot(con, logger,nullptr, MPT_TASK, MT_LINEAR);
+   int cancel_data = 0;
+  
 
+void cancelCallback(const std_msgs::Int8::ConstPtr& msg)
+{
+    cancel_data = msg->data;
+}
 
 OTA_STATE state = OTA_STATE_WAIT;
 
@@ -61,6 +69,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
         robot.close();
         return true;
     }
+    ros::Rate loop_rate(2);
 
     std::getline(file, line); // Read and discard the first line
 
@@ -175,6 +184,15 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
         //hareketin bitimini bekle...
         while(robot.getStatus()!=RS_STOP){
             sleep(1);
+        //    std::cout<<cancel_data<<std::endl;
+        //    if (cancel_data == 1){
+        //       cout << "fail to set signal...4" << endl;
+        //       res.status = "abort";
+        //       robot.close();
+        //       break;
+        //    }
+        //     ros::spinOnce();
+        //    loop_rate.sleep();
         }
 
         SIRMatrix pos(6,1);
@@ -230,6 +248,7 @@ int main(int argc, char **argv) {
   ros::NodeHandle n;
 
   ros::ServiceServer service = n.advertiseService("manipulator_service", add);
+  ros::Subscriber sub = n.subscribe("manipulator/cancel", 1000, cancelCallback);
 
   ros::spin();
   return 0;

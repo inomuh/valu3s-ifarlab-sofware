@@ -11,7 +11,7 @@ import rokos_smach_lib_realtime as rsl
 def right_rokos_smach_main_func():
     """Smach main function"""
     try:
-        rospy.init_node('rokos_right_smach_moveit_node')
+        rospy.init_node('task_planner_and_pilot_node')
         rokos_type = ""
 
         # Create the top level SMACH state machine

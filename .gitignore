@@ -1,5 +1,10 @@
 *.vscode/
 *.zip
+*.py[cod]
+
+# Assets
+mobile_manipulator/srvt_moveit/image_file/right_rokos/color_image
+mobile_manipulator/srvt_moveit/image_file/right_rokos/tof_image
 
 # Workspace Related
 CMakeLists.txt

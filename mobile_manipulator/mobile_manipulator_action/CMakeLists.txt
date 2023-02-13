@@ -144,6 +144,7 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/mobile_manipulator_action_node.cpp)
 add_executable(mp_server src/action_server.cpp)
 add_executable(mp_server2 src/action_server2.cpp)
+add_executable(mp_server3 src/action_server3.cpp)
 add_executable(mp_client src/action_client.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -163,6 +164,10 @@ add_dependencies(
   ${mobile_manipulator_action_EXPORTED_TARGETS}
 )
 add_dependencies(
+mp_server3
+  ${mobile_manipulator_action_EXPORTED_TARGETS}
+)
+add_dependencies(
   mp_client
   ${mobile_manipulator_action_EXPORTED_TARGETS}
 )
@@ -176,6 +181,10 @@ target_link_libraries(
 )
 target_link_libraries(
   mp_server2
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(
+  mp_server3
   ${catkin_LIBRARIES}
 )
 target_link_libraries(

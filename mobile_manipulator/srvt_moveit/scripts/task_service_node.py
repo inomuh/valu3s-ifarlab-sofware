@@ -268,6 +268,6 @@ class TaskServiceClass():
 
 
 if __name__ == '__main__':
-    rospy.init_node('task_service_node')
+    rospy.init_node('task_ui_node')
     task_class = TaskServiceClass()
     task_class.main_func()

@@ -55,7 +55,9 @@ def ServiceCallback(req):
                 pub.publish(cmd_msg)
                 resp.response = 'Aborted'
                 cancel_data = 0
+                print("Break")
                 break
+
             else:
                 if abs(diff) > abs(vel_config)/2:
                     vel += acc_param
@@ -84,7 +86,7 @@ def ServiceCallback(req):
     except Exception as err:
         rospy.loginfo("acceleration_service::Error == %f", err)
         resp.response = 'Aborted'
-    
+    print("Response {}".format(resp))
     return resp
 
 

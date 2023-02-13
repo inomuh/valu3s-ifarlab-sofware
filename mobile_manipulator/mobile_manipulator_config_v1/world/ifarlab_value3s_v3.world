@@ -1847,7 +1847,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://ifarlab_bus/model/ifarlab_bus.stl</uri>
+              <uri>model://ifarlab_bus/model/IFARLASASE.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>
@@ -1867,7 +1867,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>model://ifarlab_bus/model/ifarlab_bus.stl</uri>
+              <uri>model://ifarlab_bus/model/IFARLASASE.stl</uri>
               <scale>0.001 0.001 0.001</scale>
             </mesh>
           </geometry>

@@ -110,3 +110,10 @@ add_executable(KawasakiRobotTestForLinux_Valu3s_ino_2 tests/KawasakiRobotTestFor
 target_link_libraries(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_LIBRARIES} sir_robot_ros_interface)
 
 add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+
+
+add_executable(KawasakiRobotJointPublisher tests/KawasakiRobotJointPublisher.cpp)
+
+target_link_libraries(KawasakiRobotJointPublisher ${catkin_LIBRARIES} sir_robot_ros_interface)
+
+add_dependencies(KawasakiRobotJointPublisher ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})

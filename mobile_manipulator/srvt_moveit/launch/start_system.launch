@@ -7,4 +7,5 @@
 	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
 	<node name="ui_status_publisher" pkg="srvt_moveit" type="status_publisher.py"/>
 	<node name="manipulator_move" pkg="sir_robot_ros_interface" type="KawasakiRobotTestForLinux_Valu3s_ino_2"/>
+	<node name="joint_publisher" pkg="sir_robot_ros_interface" type="KawasakiRobotJointPublisher"/>
 </launch>

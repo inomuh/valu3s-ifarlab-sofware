@@ -7,7 +7,7 @@
 #include "SIRTypeDefs.h"
 #include "khi_ota_comm_valu3s.h"
 #include <std_msgs/Int8.h>
-
+#include <std_msgs/Float64MultiArray.h>
 #include <sir_robot_ros_interface/ManipulatorPose_ino_2.h>
 #include <iostream>
 #include <fstream>
@@ -18,12 +18,15 @@
 
 EIGEN_DEFINE_STL_VECTOR_SPECIALIZATION(SIRMatrix)
 
+ros::Publisher JointPosePublisher;
+
 using namespace std;
   SIRLogger *logger = new SIRLogger("log.txt", SIRLOGLEVEL::LOGLEVEL_DEBUG);
   SIRConnection *con = new SIRLinConnection(logger,"192.168.3.7",11111);
   KawasakiRS005LRobot robot(con, logger,nullptr, MPT_JOINT, MT_P2P);
   //KawasakiRS005LRobot robot(con, logger,nullptr, MPT_TASK, MT_LINEAR);
-   int cancel_data = 0;
+  
+  int cancel_data = 0;
   
 
 void cancelCallback(const std_msgs::Int8::ConstPtr& msg)
@@ -69,7 +72,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
         robot.close();
         return true;
     }
-    ros::Rate loop_rate(2);
+    ros::Rate loop_rate(30);
 
     std::getline(file, line); // Read and discard the first line
 
@@ -109,7 +112,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
 
         con->setBlockingMode(0);
         robot.setWaitForCommand(2000);
-        sleep(2);
+        //sleep(2);
 
         //open Gripper
         if (robot.setSignal(1,false))
@@ -183,7 +186,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
         }
         //hareketin bitimini bekle...
         while(robot.getStatus()!=RS_STOP){
-            sleep(1);
+            //sleep(1);
         //    std::cout<<cancel_data<<std::endl;
         //    if (cancel_data == 1){
         //       cout << "fail to set signal...4" << endl;
@@ -193,6 +196,27 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
         //    }
         //     ros::spinOnce();
         //    loop_rate.sleep();
+
+        // Publish Joint States
+            
+            SIRMatrix joint_pose(6,1);
+            robot.getJointPose(&joint_pose);
+
+            std_msgs::Float64MultiArray msg;
+            msg.data.resize(6);
+            msg.data[0] = joint_pose(0);
+            msg.data[1] = joint_pose(1);
+            msg.data[2] = joint_pose(2);
+            msg.data[3] = joint_pose(3);
+            msg.data[4] = joint_pose(4);
+            msg.data[5] = joint_pose(5);
+
+            cout <<"Joints == "<< msg<<endl;
+
+            JointPosePublisher.publish(msg);
+
+            ros::spinOnce();
+            loop_rate.sleep();
         }
 
         SIRMatrix pos(6,1);
@@ -214,7 +238,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             robot.close();
             return true;
         }
-        sleep(2);
+        //sleep(2);
 
         if (robot.close())
             cout << "The connection is succesfully closed..." << endl;
@@ -246,11 +270,14 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "khi_ota_comm");
 
   ros::NodeHandle n;
-
+  
+  JointPosePublisher = n.advertise<std_msgs::Float64MultiArray>("joint_poses", 1000);
   ros::ServiceServer service = n.advertiseService("manipulator_service", add);
   ros::Subscriber sub = n.subscribe("manipulator/cancel", 1000, cancelCallback);
 
+
   ros::spin();
+
   return 0;
 }
 

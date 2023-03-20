@@ -2,7 +2,7 @@
 
 <launch>
 	<node name="ui_parameters" pkg="parameter_configuration" type="ui_configuration.py"/>
-	<include file="$(find mobile_manipulator_config_v1)/launch/demo_gazebo.launch"/>
+	<include file="$(find mobile_manipulator_moveit_config)/launch/demo_gazebo.launch"/>
 	<include file="$(find srvt_moveit)/launch/start_rokos_smach_simulation.launch"/>
 	<include file="$(find srvt_moveit)/launch/start_rokos_task_service.launch"/>
 	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>

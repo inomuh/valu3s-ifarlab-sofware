@@ -1,7 +1,7 @@
 #ifndef SIRTYPEDEFS_H
 #define SIRTYPEDEFS_H
 
-#include <Core>
+#include <eigen3/Eigen/Core>
 
 using Eigen::MatrixXd;
 typedef Eigen::MatrixXd SIRMatrix;

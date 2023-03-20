@@ -30,10 +30,22 @@ int SIRRobotPacketParser::parse(const std::string &packet, void *data)
 		return parseCLEAR();
 	case SIRRobotCommands::MOVES:
 		return parseMOVES();
-  case SIRRobotCommands::SIGNR:
-    return parseSIGNR(static_cast<bool*>(data));
-  case SIRRobotCommands::SIGNW:
-    return parseSIGNW();
+  	case SIRRobotCommands::SIGNR:
+    	return parseSIGNR(static_cast<bool*>(data));
+ 	case SIRRobotCommands::SIGNW:
+   	 	return parseSIGNW();
+ 	case SIRRobotCommands::HOLD1:
+  		return parseHOLD1();
+  	case SIRRobotCommands::CONT1:
+   		return parseCONT1();
+  	case SIRRobotCommands::ADDJO:
+    	return parseADDJO();
+  	case SIRRobotCommands::MOVEO:
+   		return parseMOVEO();
+  	case SIRRobotCommands::DUMY1:
+    	return parseDUMY1();
+  	case SIRRobotCommands::DUMY2:
+    	return parseDUMY2();
 	default:
 		(*logger) << SIRLOGTYPE::LOG_ERROR << "SIRRobotPacketParser::parse: Invalid command type";
 		return -1;
@@ -101,3 +113,35 @@ int SIRRobotPacketParser::parseSIGNW()
 {
   return SIRRobotCommands::SIGNW;
 }
+
+int SIRRobotPacketParser::parseHOLD1()
+{
+  return SIRRobotCommands::HOLD1;
+}
+
+int SIRRobotPacketParser::parseCONT1()
+{
+  return SIRRobotCommands::CONT1;
+}
+
+int SIRRobotPacketParser::parseADDJO()
+{
+  return SIRRobotCommands::ADDJO;
+}
+
+int SIRRobotPacketParser::parseMOVEO()
+{
+  return SIRRobotCommands::MOVEO;
+}
+
+int SIRRobotPacketParser::parseDUMY1()
+{
+  return SIRRobotCommands::DUMY1;
+}
+
+int SIRRobotPacketParser::parseDUMY2()
+{
+  return SIRRobotCommands::DUMY2;
+}
+
+

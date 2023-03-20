@@ -85,7 +85,8 @@ public:
           cmd_pub.publish(cmd_msg);
           feedback_.status = 0;
           result_.result = 0;
-          success = true;
+          success = false;
+          break;
         }
         if (odom_pos_x)
         {
@@ -127,6 +128,11 @@ public:
     
     if(success)
     {
+      ROS_INFO("%s: Succeeded", action_name_.c_str());
+      // set the action state to succeeded
+      as_.setSucceeded(result_);
+    }
+    else{
       ROS_INFO("%s: Succeeded", action_name_.c_str());
       // set the action state to succeeded
       as_.setSucceeded(result_);

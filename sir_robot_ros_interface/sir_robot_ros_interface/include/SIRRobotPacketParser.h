@@ -67,16 +67,46 @@ private:
 	*/
 	int parseMOVES();
 
-  /** Parses the SIGNR packet
-  * @param sig the current value of the signal (on:true, off:false)
-  * @return returns the type of the packet
-  */
-  int parseSIGNR(bool *sig);
+  	/** Parses the SIGNR packet
+  	* @param sig the current value of the signal (on:true, off:false)
+  	* @return returns the type of the packet
+  	*/
+  	int parseSIGNR(bool *sig);
 
-  /** Parses the SIGNW packet
-  * @return returns the type of the packet
-  */
-  int parseSIGNW();
+  	/** Parses the SIGNW packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseSIGNW();
+
+  	/** Parses the HOLD1 packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseHOLD1();
+
+  	/** Parses the CONT1 packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseCONT1();
+
+  	/** Parses the ADDJO packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseADDJO();
+
+  	/** Parses the MOVEO packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseMOVEO();
+
+  	/** Parses the DUMY1 packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseDUMY1();
+
+  	/** Parses the DUMY2 packet
+  	* @return returns the type of the packet
+  	*/
+  	int parseDUMY2();
 };
 
 #endif

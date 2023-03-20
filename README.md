@@ -46,7 +46,7 @@ Add following lines to end of file
 
 - ***source /usr/share/gazebo-11/setup.sh***
 
-- ***export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/catkin_ws/src/***
+- ***export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/catkin_ws/src/gazebo_models/***
 
 
 

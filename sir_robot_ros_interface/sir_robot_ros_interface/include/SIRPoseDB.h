@@ -1,6 +1,6 @@
 #ifndef SIRPOSEDB_H
 #define SIRPOSEDB_H
-#include <Dense>
+#include <eigen3/Eigen/Dense>
 #include "SIRTypeDefs.h"
 
 class SIRPoseDB

@@ -369,3 +369,171 @@ bool KawasakiRS005LRobot::setSignal(int sigNo, bool state)
   }
 
 }
+
+
+bool KawasakiRS005LRobot::hold() 
+{
+	str.clear();
+	if (con->Send(packer->package(SIRRobotCommands::HOLD1)) != 0) {
+		if (con->Receive(str, msWait) != 0) {
+			if (parser->parse(str) == SIRRobotCommands::HOLD1) {
+				return true;
+			}
+			else {
+				(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::hold: could not receive correct answer";
+				return -1;
+			}
+		}
+		else {
+			(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::hold: could not receive answer";
+			return -1;
+		}
+	}
+	else {
+		(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::hold: could not send close command";
+		return -1;
+	}
+
+}
+
+
+
+bool KawasakiRS005LRobot::cont() 
+{
+	str.clear();
+	if (con->Send(packer->package(SIRRobotCommands::CONT1)) != 0) {
+		if (con->Receive(str, msWait) != 0) {
+			if (parser->parse(str) == SIRRobotCommands::CONT1) {
+				return true;
+			}
+			else {
+				(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::continue: could not receive correct answer";
+				return -1;
+			}
+		}
+		else {
+			(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::continue: could not receive answer";
+			return -1;
+		}
+	}
+	else {
+		(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::continue: could not send close command";
+		return -1;
+	}
+
+}
+
+
+
+
+
+
+
+bool KawasakiRS005LRobot::addjo(SIRMatrix& pos)
+{
+	str.clear();
+	void *ptr = &pos;
+        if (con->Send(packer->package(SIRRobotCommands::ADDJO, ptr)) != 0) {
+			if (con->Receive(str,msWait) != 0) {
+				if (parser->parse(str) == SIRRobotCommands::ADDJO)
+					return true;
+				else {
+					(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::addjo: could not receive correct answer";
+					return -1;
+				}
+			}
+			else {
+				(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::addjo: could not receive answer";
+				return -1;
+			}
+		}
+		else {
+			(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::addjo: could not send point";
+			return -1;
+		}
+}
+
+
+
+
+bool KawasakiRS005LRobot::moveo() 
+{
+	str.clear();
+	if (con->Send(packer->package(SIRRobotCommands::MOVEO)) != 0) {
+		if (con->Receive(str, msWait) != 0) {
+			if (parser->parse(str) == SIRRobotCommands::MOVEO) {
+				return true;
+			}
+			else {
+				(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::continue: could not receive correct answer";
+				return -1;
+			}
+		}
+		else {
+			(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::continue: could not receive answer";
+			return -1;
+		}
+	}
+	else {
+		(*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::continue: could not send close command";
+		return -1;
+	}
+
+}
+
+
+
+
+
+
+
+
+bool KawasakiRS005LRobot::dummy1()
+{
+  str.clear();
+  if (con->Send(packer->package(SIRRobotCommands::DUMY1)) != 0) {
+    if (con->Receive(str, msWait) != 0) {
+      if (parser->parse(str) == SIRRobotCommands::DUMY1) {
+        return true;
+      }
+      else {
+        (*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::Dummy1: could not receive correct answer";
+        return -1;
+      }
+    }
+    else {
+      (*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::Dummy1: could not receive answer";
+      return -1;
+    }
+  }
+  else {
+    (*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::Dummy1: could not send close command";
+    return -1;
+  }
+
+}
+
+bool KawasakiRS005LRobot::dummy2()
+{
+  str.clear();
+  if (con->Send(packer->package(SIRRobotCommands::DUMY2)) != 0) {
+    if (con->Receive(str, msWait) != 0) {
+      if (parser->parse(str) == SIRRobotCommands::DUMY2) {
+        return true;
+      }
+      else {
+        (*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::Dummy2: could not receive correct answer";
+        return -1;
+      }
+    }
+    else {
+      (*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::Dummy2: could not receive answer";
+      return -1;
+    }
+  }
+  else {
+    (*logger) << SIRLOGTYPE::LOG_ERROR << "KawasakiRS005LRobot::Dummy2: could not send close command";
+    return -1;
+  }
+
+}

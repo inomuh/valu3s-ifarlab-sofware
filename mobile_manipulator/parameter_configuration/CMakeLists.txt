@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  rosbridge_server
 )
 
 ## System dependencies are found with CMake's conventions
@@ -105,7 +106,7 @@ generate_dynamic_reconfigure_options(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES parameter_configuration
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs rosbridge_server
 #  DEPENDS system_lib
 )
 

@@ -106,7 +106,20 @@ add_dependencies(KawasakiRobotTestForLinux_Valu3s ${catkin_EXPORTED_TARGETS} ${$
 
 
 add_executable(KawasakiRobotTestForLinux_Valu3s_ino_2 tests/KawasakiRobotTestForLinux_Valu3s_ino_2.cpp)
+#MEOZKAN - the following line was added 20.03.2023
+add_executable(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop tests/KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop.cpp)
 
 target_link_libraries(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_LIBRARIES} sir_robot_ros_interface)
+#MEOZKAN - the following line was added 20.03.2023
+target_link_libraries(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop ${catkin_LIBRARIES} sir_robot_ros_interface)
 
 add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+#MEOZKAN - the following line was added 20.03.2023
+add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+
+
+add_executable(KawasakiRobotJointPublisher tests/KawasakiRobotJointPublisher.cpp)
+
+target_link_libraries(KawasakiRobotJointPublisher ${catkin_LIBRARIES} sir_robot_ros_interface)
+
+add_dependencies(KawasakiRobotJointPublisher ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})

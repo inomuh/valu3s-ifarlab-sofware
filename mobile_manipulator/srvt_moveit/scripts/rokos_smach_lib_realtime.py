@@ -406,6 +406,7 @@ class ManipulatorMoveState(smach.State):
                 return 'emg_stop' or 'self.light_curtain'
             if self.toggle_data:
                 return 'manuel'
+            #success = True
             print(get_task_list[0][2][0])
             self.req.path = "/home/ifarlab/catkin_ws/src/mobile_manipulator/" + \
                 "srvt_moveit/moveit_task_log/" + str(get_task_list[0][2][0]) + ".csv"
@@ -685,9 +686,9 @@ class ManuelState(smach.State):
         self.vel_config = 0
         self.cmd_msg = Twist()
         self.emg_data, self.ui_emg_data = None, 0 
+        self.light_curtain = False
         self.mp_status = ""
         self.vx = 0
-        self.light_curtain = False
         rospy.Subscriber("light_curtain", Bool, self.light_curtain_callback)
         rospy.Subscriber("toggle", Int8, self.toggle_callback)
         rospy.Subscriber("manuel_stop", Int8, self.stop_callback)
@@ -877,11 +878,13 @@ class RokosTakePhotoState(smach.State):
         Görevde belirtilen konuma geldiğinde görüntü çekme işlemi gerçekleştirilir.
     """
     def __init__(self, service_name):
-        smach.State.__init__(self,  outcomes=['succeeded', 'aborted'],
+        smach.State.__init__(self,  outcomes=['succeeded', 'aborted', 'emg_stop'],
                                     input_keys=['task_input', 'current_task_input',
                                      'task_id_input'],
                                     output_keys=['task_output'])
         self.req = ManipulatorPose_ino_2Request()
+        self.emg_data, self.ui_emg_data = None, 0 
+        self.light_curtain = False
         self.service_name = service_name
 
     def execute(self, ud):
@@ -893,10 +896,12 @@ class RokosTakePhotoState(smach.State):
             file_name = str(get_task_list[0][2][0])
             ud.task_output = get_task_list
             get_current_info = get_task_list[0][1]
-            get_task_list.pop(0)
             # get_current_info = list(ud.current_task_input)
             #task_id = ud.task_id_input
-
+            
+            if self.emg_data or self.light_curtain or self.ui_emg_data:
+                return 'emg_stop'
+            
             if get_current_info[2] != True:
                 print("\nTake Photo State: Mode 0\n")
                 response = 'succeeded'
@@ -921,12 +926,14 @@ class RokosTakePhotoState(smach.State):
                 get_response = 'succeeded'
 
                 if get_response == 'succeeded':
-                    self.req.path = "/home/ifarlab/catkin_ws/src/mobile_manipulator/" + \
-                    "srvt_moveit/moveit_task_log/" + file_name + "_to_home.csv"
-                    manipulator_status = self.manipulator_move_client(self.req.path)
-                    if manipulator_status == 'succeed':
-                        response = 'succeeded'
-
+                   self.req.path = "/home/ifarlab/catkin_ws/src/mobile_manipulator/" + \
+                   "srvt_moveit/moveit_task_log/" + file_name + "_to_home.csv"
+                   manipulator_status = self.manipulator_move_client(self.req.path)
+                   if manipulator_status == 'succeed':
+                       response = 'succeeded'
+                       get_task_list.pop(0)
+                   else:
+                       response = "aborted"
 
                 # response = 'succeeded'
                 
@@ -935,7 +942,15 @@ class RokosTakePhotoState(smach.State):
             print(err)
             return None
 
+    def emg_callback(self, msg):
+        self.emg_data = msg.data
 
+    def ui_emg_callback(self, msg):
+        self.ui_emg_data = msg.data
+
+    def light_curtain_callback(self, msg):
+        self.light_curtain = msg.data
+        
     def manipulator_move_client(self, pose):
         rospy.wait_for_service('manipulator_service')
         try:

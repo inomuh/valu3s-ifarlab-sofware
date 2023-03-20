@@ -9,7 +9,7 @@ function slctPose() {
   }
 }
 
-
+document.getElementById("mr_ui_sensor").value = 2.457
 
 // Get the modal
 var emgmodal = document.getElementById("emgModal");
@@ -102,6 +102,12 @@ var ui_start = new ROSLIB.Topic({
   messageType: 'std_msgs/Int8'
 });
 
+var sensor = new ROSLIB.Topic({
+  ros: ros,
+  name: '/low_laser',
+  messageType: 'std_msgs/String'
+});
+
 var ui_status = new ROSLIB.Topic({
   ros: ros,
   name: '/ui_task_status',
@@ -167,6 +173,13 @@ ui_status.subscribe(function (message) {
     ui_status_flag = false
     }
   }
+});
+
+sensor.subscribe(function (message) {
+  let text = (message.data).replace(/['"]+/g, '"');
+  json_data = JSON.parse(text);
+  sensor_data = json_data.Distance_MM / 1000;
+  document.getElementById("mr_sensor").value = sensor_data;
 });
 
 ui_emg_stop.subscribe(function (message) {

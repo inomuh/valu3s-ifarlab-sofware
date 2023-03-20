@@ -11,7 +11,7 @@ public:
 	//! Defines log level 
 	/*! These levels defines which type of log messages are reported.*/
 	enum ROBOTCOMMANS {
-		CLOSE=0,			/*!< close the connection*/
+		CLOSE=0,		/*!< close the connection*/
 		ADDTS,			/*!< sends a waypoint of the motion plan defined on task space (ADDTaskSpace)*/
 		ADDJT,			/*!< sends a waypoint of the motion plan defined on joint space (ADDJointSpace)*/
 		CLEAR,			/*!< clear the all waypoints sent before */
@@ -22,9 +22,15 @@ public:
 		STATS,			/*!< request the robot status */
 		SPEED,			/*!< Set the robot speed */
 		POSEJ,			/*!< Request the robot position in joint space (POSEtioninJointspace) */
-    POSET,			/*!< Request the robot position in task space (POSEtioninTaskspace) */
-    SIGNR,      /*!< Get the signal */
-    SIGNW      /*!< Set the signal */
+    	POSET,			/*!< Request the robot position in task space (POSEtioninTaskspace) */
+    	SIGNR,      	/*!< Get the signal */
+    	SIGNW,      	/*!< Set the signal */
+    	HOLD1,      	/*!< Pause the robot motion */
+    	CONT1,      	/*!< Continue the robot motion */
+    	ADDJO,      	/*!< Add online joint trajectory points */
+    	MOVEO,      	/*!< Online joint trajectory following */
+    	DUMY1,       	/*!< Set the signal */
+    	DUMY2        	/*!< Set the signal */
 	};
 
 	static std::string getCommand(int command){
@@ -51,10 +57,22 @@ public:
 			return "POSEJ";
 		case POSET:
 			return "POSET";
-    case SIGNR:
-      return "SIGNR";
-    case SIGNW:
-      return "SIGNW";
+    	case SIGNR:
+      		return "SIGNR";
+    	case SIGNW:
+      		return "SIGNW";
+    	case HOLD1:
+      		return "HOLD1";
+    	case CONT1:
+      		return "CONT1";
+    	case ADDJO:
+      		return "ADDJO";
+    	case MOVEO:
+      		return "MOVEO";
+    	case DUMY1:
+      		return "DUMY1";
+    	case DUMY2:
+      		return "DUMY2";
 		default:
 			return "";
 		}
@@ -82,10 +100,22 @@ public:
 			return POSEJ;
 		else if (str == "POSET")
 			return POSET;
-    else if (str == "SIGNR")
-      return SIGNR;
-    else if (str == "SIGNW")
-      return SIGNW;
+    	else if (str == "SIGNR")
+      		return SIGNR;
+    	else if (str == "SIGNW")
+      		return SIGNW;
+    	else if (str == "HOLD1")
+      		return HOLD1;
+    	else if (str == "CONT1")
+      		return CONT1;
+    	else if (str == "ADDJO")
+      		return ADDJO;
+    	else if (str == "MOVEO")
+      		return MOVEO;
+    	else if (str == "DUMY1")
+      		return DUMY1;
+    	else if (str == "DUMY2")
+      		return DUMY2;
 		else
 			return -1;
 	}

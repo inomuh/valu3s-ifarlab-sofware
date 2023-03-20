@@ -40,10 +40,12 @@ public:
 	*/
 	bool clear();
 
+
 	/** this function is used to close connection to the robot
 	* @return the result of the close operation (false: not close, true: close)
 	*/
 	bool close();
+
 
 	/** this function is used to set the speed of the robot
 	* @param sp speed that will be set
@@ -65,10 +67,12 @@ public:
 	*/
 	bool getTaskPose(SIRMatrix *);
 
+
 	/** this function is used to move the robot
 	* @return the movement (True: there is a movement, False: there is not a movement )
 	*/
 	bool move();
+
 
 	/** this function is used to check the status of the robot
 	* @return the status of the robot
@@ -88,24 +92,63 @@ public:
 	*/
 	static void robotCB(string msg);
 
+
 	/** this function is used to stop callback function
 	*/
 	void finishCB();
 
-  /** this function is used to get signal state
-  * @param sigNo signal number to get the state
-  * @param sigValue the signal state (True: signal ON, false: signal OFF)
-  * @return the result of the set operation (false: not get, true: success)
-  */
-  bool getSignal(int sigNo, bool &sigValue);
 
-  /** this function is used to set signal state
-  * @param sigNo signal number to get the state
-  * @param state value to set (ON:true/OFF:false)
-  * @return the result of the set operation (false: not set, true: success)
-  */
-  bool setSignal(int sigNo, bool state);
+  	/** this function is used to get signal state
+  	* @param sigNo signal number to get the state
+  	* @param sigValue the signal state (True: signal ON, false: signal OFF)
+  	* @return the result of the set operation (false: not get, true: success)
+  	*/
+  	bool getSignal(int sigNo, bool &sigValue);
 
+
+  	/** this function is used to set signal state
+  	* @param sigNo signal number to get the state
+  	* @param state value to set (ON:true/OFF:false)
+  	* @return the result of the set operation (false: not set, true: success)
+  	*/
+  	bool setSignal(int sigNo, bool state);
+
+
+  	/** this function is HOLD
+  	* @return the result of the operation result (false: not success, true: success)
+  	*/
+  	bool hold();
+
+
+  	/** this function is CONT
+  	* @return the result of the operation result (false: not success, true: success)
+  	*/
+  	bool cont();
+
+
+	/** Sends waypoints for online robot motion in joint space 
+	* @param SIRMatrix is a vector that shows J1,J2,J3,J4,J5,J6 for joint space in degrees
+	* @return the result of the operation result (false: not success, true: success)
+	*/
+  	bool addjo(SIRMatrix& pos); 
+
+
+  	/** Starts online robot motion in joint space when signal(2132) is set
+  	* @return the result of the operation result (false: not success, true: success)
+  	*/
+  	bool moveo();
+
+
+  	/** this function is DUMMY
+  	* @return the result of the operation result (false: not success, true: success)
+  	*/
+  	bool dummy1();
+
+
+  	/** this function is DUMMY
+  	* @return the result of the operation result (false: not success, true: success)
+  	*/
+  	bool dummy2();
 
 private:
 	/**

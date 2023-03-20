@@ -80,17 +80,51 @@ private:
 	*/
 	//std::string packSPEED();
 
-  /** Packs the SIGNW packet
-  * @param arg the number of signal to be set (minus sign for OFF, o/w ON).
-  * @return returns the packet which is ready to send.
-  */
-  std::string packSIGNW(int* arg);
+  	/** Packs the SIGNW packet
+  	* @param arg the number of signal to be set (minus sign for OFF, o/w ON).
+  	* @return returns the packet which is ready to send.
+  	*/
+  	std::string packSIGNW(int* arg);
 
-  /** Packs the SIGNR packet
-  * @param arg the number of signal to be get.
-  * @return returns the packet which is ready to send.
-  */
-  std::string packSIGNR(int* arg);
+  	/** Packs the SIGNR packet
+  	* @param arg the number of signal to be get.
+  	* @return returns the packet which is ready to send.
+  	*/
+ 	std::string packSIGNR(int* arg);
+
+  	/** Packs the HOLD1 packet
+  	* @return returns the packet which is ready to send.
+  	*/
+  	std::string packHOLD1();
+
+  	/** Packs the CONT1 packet
+  	* @return returns the packet which is ready to send.
+  	*/
+  	std::string packCONT1();
+
+  	/** Packs the ADDJO packet
+	* @param arg the position vector for the robot joints. The size of the vector [j1 j2 j3 j4 j5 j6]' is (6x1) in degrees.
+	* @return returns the packet which is ready to send.
+	*/
+	std::string packADDJO(SIRMatrix *arg);
+
+  	/** Packs the MOVEO packet
+  	* @return returns the packet which is ready to send.
+  	*/
+  	std::string packMOVEO();
+
+  	/** Packs the DUMMY1 packet
+  	* @param arg the number of signal to be get.
+  	* @return returns the packet which is ready to send.
+  	*/
+  	std::string packDUMY1();
+
+  	/** Packs the DUMMY2 packet
+  	* @param arg the number of signal to be get.
+  	* @return returns the packet which is ready to send.
+  	*/
+  	std::string packDUMY2();
+
 
 };
 

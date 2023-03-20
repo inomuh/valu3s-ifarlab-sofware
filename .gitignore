@@ -7,7 +7,7 @@ mobile_manipulator/srvt_moveit/image_file/right_rokos/color_image
 mobile_manipulator/srvt_moveit/image_file/right_rokos/tof_image
 
 # Workspace Related
-CMakeLists.txt
+#CMakeLists.txt
 
 # Application Related
 /sirprojectteam-sirrobotrosinterfacerepo-b8bd8e76bcc6

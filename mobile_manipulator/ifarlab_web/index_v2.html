@@ -28,17 +28,18 @@
 
       }
     </style>
-    <link
+    <!--<link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       data-tag="font"
-    />
+    />-->
     <!--This is the head section-->
     <!-- <style> ... </style> -->
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/jquery.min.js"></script>      
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <!--<script src="./js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>-->
+    <script src="./js/bootstrap.min.js"></script>
 
   </head>
   <body>
@@ -74,7 +75,7 @@
                   </div>                 
                 </div>
               </div>-->
-              <div class="col">
+              <div class="col-sm-6">
                 <div class="row text-center">
                   <div class="col">
                     <label class="config-label">Speed</label>
@@ -83,13 +84,32 @@
                     <input type="number" placeholder=0.1 id="mr_ui_velocity" class="input" min="0.05" style="width:25%;text-align: center;"/>
                   </div>
                 </div>   
+                <div class="row text-center">
+                  <button id="config_button" class="button apply-button">
+                    Apply
+                  </button>
+                </div> 
+              </div>
+              <div class="col-sm-6">
+                <div class="row text-center">
+                  <div class="col-sm-6">
+                    <label class="config-label">Max Sensor Range</label>
+                  </div>                
+                  <div class="col-sm-6">
+                    <input type="number" id="mr_ui_sensor" class="input" style="width:50%;text-align: center;" readonly/>
+                  </div>
+                </div>   
+                <div class="row text-center">
+                  <div class="col-sm-6">
+                    <label class="config-label">Sensor Range</label>
+                  </div>                
+                  <div class="col-sm-6">
+                    <input type="number" placeholder=0.0 id="mr_sensor" class="input" min="0.05" style="width:50%;text-align: center;"/>
+                  </div>
+                </div>   
               </div>
             </div>
-            <div class="row text-center">
-              <button id="config_button" class="button apply-button">
-                Apply
-              </button>
-            </div> 
+
           </div>
           <div class="row text-center home1-container02 col-border">
             <div class="col-sm-4 col-xs-4">

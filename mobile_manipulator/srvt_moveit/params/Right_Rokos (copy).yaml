@@ -1,0 +1,123 @@
+---
+
+Right_Rokos:
+- Task:
+    Mode: 1
+    Position:
+      X: 0.2
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352691
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 0.2
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352692
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 0.5
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352701
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 0.5
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352702
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 1.0
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352711
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 1.0
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352712
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 1.5
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352721
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 1.5
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352722
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 2.0
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352731
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 2.0
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352732
+    Vehicle_CODE: 13M38_1

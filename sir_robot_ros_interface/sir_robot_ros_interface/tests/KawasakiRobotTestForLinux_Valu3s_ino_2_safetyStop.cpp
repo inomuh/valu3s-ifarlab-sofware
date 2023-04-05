@@ -207,8 +207,8 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
         
         cout <<"Before while"<<endl;
         //hareketin bitimini bekle...
-        while (ros::ok()){
-          //(((robot.getStatus()!=RS_STOP) && (!HOLD)) || (HOLD)){
+        // while (ros::ok()){
+        while (((robot.getStatus()!=RS_STOP) && (!HOLD)) || (HOLD)){
             
           // Publish Joint States
           // TODO Not working if started on terminal&&
@@ -229,79 +229,70 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             JointPosePublisher.publish(msg);
 
             //MEOZKAN-BEGIN
-            // if((dist_listener.danger_level == 1)&&(HOLD==false)){
-            //     robot.hold();
-            //     HOLD = true;
-            // }
-            // if((dist_listener.danger_level == 0)&&(HOLD==true)){
-            //     robot.cont();
-            //     HOLD = false;
-            // }
-
-            // Get robot status
-            auto robot_status = robot.getStatus(); // RS_STOP 0 RS_MOVE 1 RS_UNKNOWN 2
-            cout <<"STATUS = "<< robot_status <<endl;
-
-            // Check Emergency conditions
-            if(((dist_listener.danger_level == 1)||((uiEmergency==1)||(buttonEmergency==1)))&&(HOLD==false)){
+            if((dist_listener.danger_level == 1)&&(HOLD==false)){
                 robot.hold();
                 HOLD = true;
-                cout <<"------HOLD------"<<endl;
             }
-            if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(HOLD==true)){
-                // robot.cont();
-                for (int i = 0; i < data.size(); ++i) {
-                    float pose1 = rad2deg(std::stof(data[i][0]));
-                    float pose2 = rad2deg(std::stof(data[i][1]));
-                    float pose3 = rad2deg(std::stof(data[i][2]));
-                    float pose4 = rad2deg(std::stof(data[i][3]));
-                    float pose5 = rad2deg(std::stof(data[i][4]));
-                    float pose6 = rad2deg(std::stof(data[i][5]));
-
-                    poses<<pose1, pose2, pose3, pose4, pose5, pose6;
-                    std::cout<< pose1 <<" "<< pose2 <<" "<< pose3 <<" "<< pose4 <<" "<< pose5 <<" "<< pose6 << std::endl;
-                    // std::cout<< poses << std::endl;
-                    last_poses = poses;
-                    robot.add(poses);
-                }
-                robot.move();
+            if((dist_listener.danger_level == 0)&&(HOLD==true)){
+                robot.cont();
                 HOLD = false;
-                cout <<"------CONTINUE------"<<endl;
             }
-            cout <<"HOLD = "<< HOLD<<endl;
+
+            // Get robot status
+            // auto robot_status = robot.getStatus(); // RS_STOP 0 RS_MOVE 1 RS_UNKNOWN 2
+            // cout <<"STATUS = "<< robot_status <<endl;
+
+            // Check Emergency conditions
+            // if(((dist_listener.danger_level == 1)||((uiEmergency==1)||(buttonEmergency==1)))&&(HOLD==false)){
+            //     robot.hold();
+            //     HOLD = true;
+            //     cout <<"------HOLD------"<<endl;
+            // }
+            // if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(HOLD==true)){
+                // robot.cont();
+            //     for (int i = 0; i < data.size(); ++i) {
+            //         float pose1 = rad2deg(std::stof(data[i][0]));
+            //         float pose2 = rad2deg(std::stof(data[i][1]));
+            //         float pose3 = rad2deg(std::stof(data[i][2]));
+            //         float pose4 = rad2deg(std::stof(data[i][3]));
+            //         float pose5 = rad2deg(std::stof(data[i][4]));
+            //         float pose6 = rad2deg(std::stof(data[i][5]));
+            //         poses<<pose1, pose2, pose3, pose4, pose5, pose6;
+            //         std::cout<< pose1 <<" "<< pose2 <<" "<< pose3 <<" "<< pose4 <<" "<< pose5 <<" "<< pose6 << std::endl;
+            //         last_poses = poses;
+            //         robot.add(poses);
+            //     }
+            //     robot.move();
+            //     HOLD = false;
+            //     cout <<"------CONTINUE------"<<endl;
+            // }
+            // cout <<"HOLD = "<< HOLD<<endl;
             
             // Emergency button pressed robot connection needed to be refreshed
-            if ((buttonEmergency==1) && (robot_status==RS_STOP) && (connection_state==0)){
-              connection_state = 1;
-              // robot.close();
-              cout <<"------CLOSE CONNECTION------"<<endl;
-            }
-
+            // if ((buttonEmergency==1) && (robot_status==RS_STOP) && (connection_state==0)){
+            //   connection_state = 1;
+            //   cout <<"------CLOSE CONNECTION------"<<endl;
+            // }
             // Emergecy button released
-            if (((buttonEmergency==0) && (connection_state==1)) || (robot_status==RS_UNKNOWN)){
-              if (!robot.Connect()){
-                cout<<"------CONNECTION FAILED------"<< endl;
-                continue;
-              }
-              else{
-                cout<<"------CONNECTED------"<< endl;
-                connection_state = 0;
-              }
-            }
+            // if (((buttonEmergency==0) && (connection_state==1)) || (robot_status==RS_UNKNOWN)){
+            //   if (!robot.Connect()){
+            //     cout<<"------CONNECTION FAILED------"<< endl;
+            //     continue;
+            //   }
+            //   else{
+            //     cout<<"------CONNECTED------"<< endl;
+            //     connection_state = 0;
+            //   }
+            // }
 
             
-            // if (!(((robot_status!=RS_STOP) && (!HOLD)) || (HOLD))){
+            // cout <<"CHECK == "<< checkCorrectStop(last_poses, joint_pose)<<endl;
+            // Task Completed
+            // if ((robot_status==RS_STOP) && (!HOLD) && (uiEmergency==0) && (checkCorrectStop(last_poses, joint_pose) == true)){
             //   cout<<"------EXIT------"<< endl;
             //   break;
             // }
-            cout <<"CHECK == "<< checkCorrectStop(last_poses, joint_pose)<<endl;
-            // Task Completed
-            if ((robot_status==RS_STOP) && (!HOLD) && (uiEmergency==0) && (checkCorrectStop(last_poses, joint_pose) == true)){
-              cout<<"------EXIT------"<< endl;
-              break;
-
-            }
-            cout <<"------"<<endl;
+            // cout <<"------"<<endl;
 
             //MEOZKAN-END
           //  if (robot.getStatus()==RS_STOP && !flag){

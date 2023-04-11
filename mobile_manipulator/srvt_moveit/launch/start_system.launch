@@ -11,7 +11,7 @@
 	<node name="manipulator_move" pkg="sir_robot_ros_interface" type="KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop"/>
 	<node name="joint_publisher" pkg="sir_robot_ros_interface" type="KawasakiRobotJointPublisher"/>
 	<node name="kawasaki_kinematics_tf" pkg="sir_robot_ros_interface" type="kawasaki_kinematics_tf"/>
-	<include file="$(find mobile_manipulator_description)/launch/gazebo_w_description.launch"/>
+	<!-- <include file="$(find mobile_manipulator_description)/launch/gazebo_w_description.launch"/> -->
 
 
 </launch>

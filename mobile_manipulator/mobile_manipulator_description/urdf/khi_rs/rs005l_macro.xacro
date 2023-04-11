@@ -257,36 +257,38 @@
       </collision>
       <xacro:default_inertial mass="${j6_mass}"/>
     </link>
-    <!-- Link 6 -->
+
+    <!-- Link 7 -->
     <joint name="${prefix}joint7" type="fixed">
       <axis xyz="0 0 1" rpy="0 0 0" />
-      <origin xyz="0.04 -0.035 0.22" rpy="1.570796 -1.570796 0" />
+      <origin xyz="0 0 0" rpy="0 0 -1.96" />
       <parent link="${prefix}link6"/>
       <child link="${prefix}link7"/>
     </joint>
 
-    
+
         <link name="${prefix}link7">
       <visual>
         <geometry>
           <mesh filename="package://mobile_manipulator_description/meshes/khi_rs/Montaj.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="Black"/>
-        <origin xyz="0 0 0" rpy="0 -1.570796 1.570796"/>
+        <origin xyz="-0.035 -0.04 0.2175" rpy="1.570796 3.1415 0"/>
       </visual>
       <collision>
         <geometry>
           <mesh filename="package://mobile_manipulator_description/meshes/khi_rs/Montaj.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="Black"/>
-        <origin xyz="0 0 0" rpy="0 -1.570796 1.570796"/>
+        <origin xyz="-0.035 -0.04 0.2175" rpy="1.570796 3.1415 0"/>
       </collision>
-      <xacro:default_inertial mass="0.2"/>
+      <xacro:default_inertial mass="0.1"/>
     </link>
-
+<!--
     <link name="camera_link"/>
+
     <joint name="camera_joint" type="fixed">
-       <origin xyz="-0.04 0.0525 -0.021" rpy="0 0 0"/>
+       <origin xyz="0.0145 0.0125 0.185" rpy="0 -1.570796 1.570796"/>
        <parent link="${prefix}link7"/>
        <child link="camera_link"/>
     </joint>
@@ -304,7 +306,7 @@
     </joint>
      
     <link name="camera_rgb_optic_frame"/>
-   	 
+
     <gazebo reference="camera_link">
       <sensor type="depth" name="Realsense_Camera_Depth">
       <always_on>true</always_on>
@@ -321,8 +323,8 @@
           <far>16</far>
         </clip>
       </camera>
+      <visualize>True</visualize>      
       <plugin name="depth_camera_plugin" filename="libgazebo_ros_openni_kinect.so">
-        <visualize>true</visualize>
         <alwaysOn>true</alwaysOn>
         <updateRate>10.0</updateRate>
         <cameraName>camera</cameraName>
@@ -345,6 +347,6 @@
         <hackBaseline>0</hackBaseline>
       </plugin>    
       </sensor>
-    </gazebo>
+    </gazebo>-->
   </xacro:macro>
 </robot>

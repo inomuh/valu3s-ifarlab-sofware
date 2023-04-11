@@ -40,7 +40,6 @@ void inputCallback(const std_msgs::Float64MultiArray::ConstPtr& msg) {
             std::cout << value << ", ";
         }
 
-        output_msg.header.stamp = ros::Time::now();
         output_msg.position = values;
     } 
     else {
@@ -63,6 +62,7 @@ int main(int argc, char** argv) {
     while (ros::ok()){
 
         std::cout <<"Joints == "<< output_msg<<std::endl;
+        output_msg.header.stamp = ros::Time::now();
         pub.publish(output_msg);
         ros::spinOnce();
         loop_rate.sleep();

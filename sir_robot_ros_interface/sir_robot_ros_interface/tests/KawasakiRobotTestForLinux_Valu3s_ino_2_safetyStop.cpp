@@ -175,20 +175,6 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             robot.add(poses);
         }
 
-        // for (auto const& pose_list : req.poses) {
-        //     if ((pose_list.pose.size() % 6) != 0){
-        //         std::cout << pose_list.pose.size() << " on item " << count <<std::endl;
-        //         res.status = "Wrong Input Lenght";
-        //         return true;
-        //     }
-
-        //     SIRMatrix poses(6,1);
-        //     poses<<pose_list.pose[0], pose_list.pose[1], pose_list.pose[2], pose_list.pose[3], pose_list.pose[4], pose_list.pose[5];
-        //     last_poses = poses;
-        //     count++;
-        //     robot.add(poses);
-        // }
-
         robot.setSpeed(9.0);
 
         if (robot.move())
@@ -228,26 +214,13 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             msg.data[5] = joint_pose(5);
 
             // cout <<"Joints == "<< msg<<endl;
-
             JointPosePublisher.publish(msg);
-
-            //MEOZKAN-BEGIN
-            // if((dist_listener.danger_level == 1)&&(HOLD==false)){
-            //     robot.hold();
-            //     HOLD = true;
-            // }
-            // if((dist_listener.danger_level == 0)&&(HOLD==true)){
-            //     robot.cont();
-            //     HOLD = false;
-            // }
 
             // Get robot status
             auto robot_status = robot.getStatus(); // RS_STOP 0 RS_MOVE 1 RS_UNKNOWN 2
             // std::cout <<"RS STATUS = "<< robot_status <<endl;
 
 			// Check Emergency conditions
-            
-
             // UI Emergency Stop
             if (((dist_listener.danger_level == 1)||((uiEmergency==1)))&&(HOLD==false)){
                 robot.hold();
@@ -269,7 +242,6 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
                 // std::cout <<"------UI CONTINUE------"<<endl;
             }
 
-
             // Reconnect
             if (((emg_stop==true) && (retry_connection==false)) || (robot_status==RS_UNKNOWN)){
                 if (!robot.Connect()){
@@ -282,7 +254,6 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
                     retry_connection = true;
                 }
             }
-
 
             // Emergecy Continue
             if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(emg_stop==true)&&(retry_connection==true)){
@@ -364,27 +335,6 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             ros::spinOnce();
             loop_rate.sleep();
         }
-
-        // std::cout <<"after while"<<endl;
-        // SIRMatrix pos(6,1);
-        // robot.getJointPose(&pos);
-        // if (checkCorrectStop(last_poses, pos) == false){
-        //     cout << "stopped at wrong position" << endl;
-        //     res.status = "abort";
-        //     robot.close();
-        //     return true;
-        // }
-
-
-    //    if (robot.setSignal(1,false))
-    //        cout << "success to set signal..." << endl;
-    //    else{
-    //        cout << "fail to set signal...4" << endl;
-    //        res.status = "abort";
-    //        robot.close();
-    //        return true;
-    //    }
-        //sleep(2);
 
         if (robot.close())
             // std::cout << "The connection is succesfully closed..." << endl;

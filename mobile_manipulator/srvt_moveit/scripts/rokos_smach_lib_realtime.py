@@ -23,6 +23,7 @@ from geometry_msgs.msg import Twist
 from std_msgs.msg import Int8, String, Bool
 from tf.transformations import euler_from_quaternion
 from sir_robot_ros_interface.srv import ManipulatorPose
+import rosnode
 
 from actionlib_msgs.msg import *
 import mobile_manipulator_action.msg
@@ -266,7 +267,6 @@ class GeneralSelectionState(smach.State):
                 # çekmesi için take photo statetine yönlendirir.
                 queue_control = self.queue_control_func(current_task[1])
                 ud.task_id_output = current_task[2][0]
-                print("Queueeee controllllllllllllllllllllllll", queue_control)
 
                 # True olduğunda take photo statetine gider.
                 # Mevcut tamamlanmış görevi pop ederek listeden çıkarır.
@@ -279,38 +279,18 @@ class GeneralSelectionState(smach.State):
                     state = 'Rokos_Take_Photo'
 
                 else:
-                    print(current_task[1])
                     get_index = current_task[1].index(self.get_index)
-                    print(get_index)
                     ud.task_output = get_task_list
-                    print("2",current_task[1])
 
                     if get_index in [0,1,2]:
-                        print("3")
                         state = 'Mobile_Platform_Move'
-                        # 3 hareketi aynı anda gerçekleştireceği için +3 dendi
                         self.get_index += 1
-                    
-                    # elif get_index in [1,2]:
-                    #     print("4")
-                    #     state = 'Manipulator_Move'
-                    #     # 3 hareketi aynı anda gerçekleştireceği için +3 dendi
-                    #     self.get_index += 2
-
-                    # else:
-                    #     print("5")
-                    #     state = 'Rokos_Camera'
-                    #     self.state_control = False
-                    #     # 2 hareketi aynı anda gerçekleştireceği için +2 dendi
-                    #     self.get_index += 2
 
                     if self.get_index >= 4:
-                        print("6")
                         # counter sıfırlama
                         self.get_index = 1
 
                     ud.current_task_output = self.state_control
-                print("7")
                 response = state
                 #return state
             return response
@@ -383,7 +363,6 @@ class ManipulatorMoveState(smach.State):
         try:
             self.req = ManipulatorPose_ino_2Request()
             success = False
-            ui_data = 2
             task_status_data["task_status"] = "Manipulator State"
             ui_data_publisher.publish(str(task_status_data))
             get_task_list = list(ud.task_input)
@@ -391,7 +370,6 @@ class ManipulatorMoveState(smach.State):
             task_id = ud.task_id_input
 
             current_task = copy.deepcopy(get_task_list[0][0][:3])
-            print("manipulator current task = ", current_task)
             current_task[0] = 0
 
             # Son pozisyon ile mevcut görevin pozisyonlarını karşılaştırır.
@@ -407,11 +385,9 @@ class ManipulatorMoveState(smach.State):
             if self.toggle_data:
                 return 'manuel'
             #success = True
-            print(get_task_list[0][2][0])
             self.req.path = "/home/ifarlab/catkin_ws/src/mobile_manipulator/" + \
                 "srvt_moveit/moveit_task_log/" + str(get_task_list[0][2][0]) + ".csv"
             result = self.manipulator_move_client(self.req.path)
-            print("result", result)
             if result == 'abort':
                 return 'aborted'
             elif result=='succeed':
@@ -443,7 +419,6 @@ class ManipulatorMoveState(smach.State):
             return response
         except Exception as err:
             print(err)
-            print("emg dataaaaa",self.emg_data)
             if self.emg_data:
                 return 'emg_stop'            
             return 'aborted'
@@ -534,7 +509,6 @@ class MobilePlatformMoveState(smach.State):
 
     def execute(self, ud):
         try:
-            ui_data = 3
             task_status_data["task_status"] = "Mobile Platform State"
             task_status_data["active_id"] = str(ud.task_id_input)
             ui_data_publisher.publish(str(task_status_data))
@@ -548,9 +522,8 @@ class MobilePlatformMoveState(smach.State):
             current_task = copy.deepcopy(get_task_list[0][0][:3])
             x = current_task[0]
             rospy.loginfo("current task: {}".format(current_task))
-            vel = 0
             pose_status = False
-            move_forward = True
+            once_key = True
 
             while not rospy.is_shutdown():
                 if self.toggle_data:
@@ -561,9 +534,12 @@ class MobilePlatformMoveState(smach.State):
                     self.cancel_pub.publish(self.cancel_msg)
                     return 'emg_stop'
                 goal = mobile_manipulator_action.msg.MobilePlatformGoal(goal=[self.vel_config, x])
-                action_client.send_goal(goal)
-                # action_client.wait_for_result()
-                # if (action_client.get_result()):
+                
+                if once_key == True:
+                    action_client.wait_for_server()                    
+                    action_client.send_goal(goal)
+                    once_key = False
+                
                 if abs(x - self.odom_x) < 0.005:
                     pose_status = True
                 if pose_status:
@@ -715,11 +691,7 @@ class ManuelState(smach.State):
                     return 'succeeded'
                 if self.emg_data or self.light_curtain or self.ui_emg_data:
                     return 'emg_stop'
-                if self.stop_data:
-                    # TODO STOP
-                    pass
                 if self.stop_data == 2:
-                    
                     self.req.path = "/home/ifarlab/catkin_ws/src/mobile_manipulator/" + \
                 "srvt_moveit/moveit_task_log/home.csv"
                     result = self.manipulator_move_client(self.req.path)
@@ -832,7 +804,6 @@ class RokosCameraState(smach.State):
 
             self.planning_time_control = False
 
-            # TODO FOTO CEKKKKKK
 
             tolerance_control = True
 
@@ -896,6 +867,7 @@ class RokosTakePhotoState(smach.State):
             file_name = str(get_task_list[0][2][0])
             ud.task_output = get_task_list
             get_current_info = get_task_list[0][1]
+            print(get_current_info)
             # get_current_info = list(ud.current_task_input)
             #task_id = ud.task_id_input
             
@@ -911,19 +883,23 @@ class RokosTakePhotoState(smach.State):
                 print("\n\nTake Photo State\n")
                 # Görüntünün isimlendirme işlemi burada gerçekleştirilir.
                 # Image Service' e istek olarak gönderilir.
-                image_name = str(str(get_current_info[0]) + "_id_" +\
-                     str(get_current_info[1]) + "_vehicle_" + str(get_current_info[3]))
+                image_name = str(str(ud.current_task_input[0]) + "_id_" +\
+                     str(ud.current_task_input[1]) + "_vehicle_" + str(ud.current_task_input[3]))
                 print(f"Image Name = {image_name}\n")
 
+                node_list = str(rosnode.get_node_names())
+                is_camera_open = True if "sick" in node_list else False
+                
                 # Robotun her hedef noktasına ulaştığında resim kaydedip sıradaki göreve geçmesi için
                 # aşağıdaki bölümün açılıp, return 'succeeded' satırının kapatılması gerekir.
-                # get_response = self.get_image_client_func(image_name)
-
-                # print(f"\nTask ID = {ud.task_id_input}")
-                # print(f"get response = {get_response}\n")
-                # response = get_response
-                response = 'aborted'
-                get_response = 'succeeded'
+                if is_camera_open:
+                    get_response = self.get_image_client_func(image_name)
+                    print(f"\nTask ID = {ud.task_id_input}")
+                    print(f"get response = {get_response}\n")
+                    response = get_response
+                else:
+                    response = 'aborted'
+                    get_response = 'succeeded'
 
                 if get_response == 'succeeded':
                    self.req.path = "/home/ifarlab/catkin_ws/src/mobile_manipulator/" + \

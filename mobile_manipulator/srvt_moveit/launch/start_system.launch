@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-	<include file="$(find mobile_manipulator_config_v1)/launch/robot_description.launch"/>
+
 	<include file="$(find srvt_moveit)/launch/start_rokos_smach_realtime.launch"/>
 	<include file="$(find srvt_moveit)/launch/start_rokos_task_service.launch"/>
 	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
@@ -10,4 +10,8 @@
 <!--	<node name="manipulator_move" pkg="sir_robot_ros_interface" type="KawasakiRobotTestForLinux_Valu3s_ino_2"/>  -->
 	<node name="manipulator_move" pkg="sir_robot_ros_interface" type="KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop"/>
 	<node name="joint_publisher" pkg="sir_robot_ros_interface" type="KawasakiRobotJointPublisher"/>
+	<node name="kawasaki_kinematics_tf" pkg="sir_robot_ros_interface" type="kawasaki_kinematics_tf"/>
+	<include file="$(find mobile_manipulator_description)/launch/gazebo_w_description.launch"/>
+
+
 </launch>

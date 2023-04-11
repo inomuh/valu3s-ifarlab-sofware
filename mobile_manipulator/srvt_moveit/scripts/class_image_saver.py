@@ -28,9 +28,9 @@ class ImageSaver():
 
         self.bridge = CvBridge()
         # import kısmında "as bridge" şeklinde alındığında hata alınıyor.
-        self.color_cam_sub = rospy.Subscriber(('/camera/image_raw'),\
+        self.color_cam_sub = rospy.Subscriber(('/sick_visionary_t_mini/intensity'),\
          Image, self.__color_cam_callback)
-        self.tof_cam_sub = rospy.Subscriber(('/camera/depth_image_raw'),\
+        self.tof_cam_sub = rospy.Subscriber(('/sick_visionary_t_mini/depth'),\
          Image, self.__tof_cam_callback)
 
 
@@ -108,7 +108,7 @@ class ImageSaver():
                 cv2.imwrite(os.path.join(new_dir, image_name), depth_display_image)
 
             else:
-                img = self.bridge.imgmsg_to_cv2(img_msg, "bgr8")
+                img = self.bridge.imgmsg_to_cv2(img_msg, "16UC1")
                 new_dir = self.dir_name + "/color_image"
                 img_file_format = ".jpg"
 

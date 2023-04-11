@@ -299,102 +299,93 @@
             <origin xyz="0 0 0" rpy="0 0 0" />
         </inertial>
     </link>
-
-    <!-- Link 7 -->
+    <!-- Link 6 -->
     <joint name="joint7" type="fixed">
-      <axis xyz="0 0 1" rpy="0 0 0" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <parent link="link6"/>
-      <child link="link7"/>
+        <axis rpy="0 0 0" xyz="0 0 1" />
+        <origin rpy="1.570796 -1.570796 0" xyz="0.04 -0.035 0.22" />
+        <parent link="link6" />
+        <child link="link7" />
     </joint>
-
-
-        <link name="link7">
-      <visual>
-        <geometry>
-          <mesh filename="package://mobile_manipulator_description/meshes/khi_rs/Montaj.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-        <material name="Black"/>
-        <origin xyz="-0.035 -0.04 0.2175" rpy="1.570796 3.1415 0"/>
-      </visual>
-      <collision>
-        <geometry>
-          <mesh filename="package://mobile_manipulator_description/meshes/khi_rs/Montaj.stl" scale="0.001 0.001 0.001"/>
-        </geometry>
-        <material name="Black"/>
-        <origin xyz="-0.035 -0.04 0.2175" rpy="1.570796 3.1415 0"/>
-      </collision>
+    <link name="link7">
+        <visual>
+            <geometry>
+                <mesh filename="package://mobile_manipulator_description/meshes/khi_rs/Montaj.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="Black" />
+            <origin rpy="0 -1.570796 1.570796" xyz="0 0 0" />
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://mobile_manipulator_description/meshes/khi_rs/Montaj.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="Black" />
+            <origin rpy="0 -1.570796 1.570796" xyz="0 0 0" />
+        </collision>
         <inertial>
-            <mass value="0.1" />
+            <mass value="0.2" />
             <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
             <origin xyz="0 0 0" rpy="0 0 0" />
         </inertial>
     </link>
-
-    <link name="camera_link"/>
-
+    <link name="camera_link" />
     <joint name="camera_joint" type="fixed">
-       <origin xyz="0.0145 0.0125 0.185" rpy="0 -1.570796 1.570796"/>
-       <parent link="link7"/>
-       <child link="camera_link"/>
+        <origin rpy="0 0 0" xyz="-0.04 0.0525 -0.021" />
+        <parent link="link7" />
+        <child link="camera_link" />
     </joint>
     <joint name="camera_rgb_joint" type="fixed">
-       <origin xyz="0 0 0" rpy="0 0 0"/>
-       <parent link="camera_link"/>
-       <child link="camera_rgb_frame"/>
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <parent link="camera_link" />
+        <child link="camera_rgb_frame" />
     </joint>
-    <link name="camera_rgb_frame"/>
-
+    <link name="camera_rgb_frame" />
     <joint name="camera_rgb_optic_joint" type="fixed">
-       <origin xyz="0 0 0" rpy="0 0 0"/>
-       <parent link="camera_rgb_frame"/>
-       <child link="camera_rgb_optic_frame"/>
+        <origin rpy="0 0 0" xyz="0 0 0" />
+        <parent link="camera_rgb_frame" />
+        <child link="camera_rgb_optic_frame" />
     </joint>
-     
-    <link name="camera_rgb_optic_frame"/>
-   	 
+    <link name="camera_rgb_optic_frame" />
     <gazebo reference="camera_link">
-      <sensor type="depth" name="Realsense_Camera_Depth">
-      <always_on>true</always_on>
-      <update_rate>10.0</update_rate>
-      <camera>
-        <horizontal_fov>1.22</horizontal_fov>
-        <image>
-          <width>512</width>
-          <height>424</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.01</near>
-          <far>16</far>
-        </clip>
-      </camera>
-      <visualize>True</visualize>      
-      <plugin name="depth_camera_plugin" filename="libgazebo_ros_openni_kinect.so">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>10.0</updateRate>
-        <cameraName>camera</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <depthImageTopicName>depth_image_raw</depthImageTopicName>
-        <depthImageCameraInfoTopicName>depth_camera_info</depthImageCameraInfoTopicName>
-        <pointCloudTopicName>points</pointCloudTopicName>
-        <frameName>camera_rgb_optic_frame</frameName>
-        <pointCloudCutoff>0.0</pointCloudCutoff>
-        <distortionK1>0.00000001</distortionK1>
-        <distortionK2>0.00000001</distortionK2>
-        <distortionK3>0.00000001</distortionK3>
-        <distortionT1>0.00000001</distortionT1>
-        <distortionT2>0.00000001</distortionT2>
-        <CxPrime>0</CxPrime>
-        <Cx>0</Cx>
-        <Cy>0</Cy>
-        <focalLength>0</focalLength>
-        <hackBaseline>0</hackBaseline>
-      </plugin>    
-      </sensor>
+        <sensor name="Realsense_Camera_Depth" type="depth">
+            <always_on>true</always_on>
+            <update_rate>30.0</update_rate>
+            <camera>
+                <horizontal_fov>1.22</horizontal_fov>
+                <image>
+                    <width>512</width>
+                    <height>424</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.01</near>
+                    <far>16</far>
+                </clip>
+            </camera>
+            <plugin filename="libgazebo_ros_openni_kinect.so" name="depth_camera_plugin">
+                <visualize>true</visualize>
+                <alwaysOn>true</alwaysOn>
+                <updateRate>30.0</updateRate>
+                <cameraName>camera</cameraName>
+                <imageTopicName>image_raw</imageTopicName>
+                <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+                <depthImageTopicName>depth_image_raw</depthImageTopicName>
+                <depthImageCameraInfoTopicName>depth_camera_info</depthImageCameraInfoTopicName>
+                <pointCloudTopicName>points</pointCloudTopicName>
+                <frameName>camera_rgb_optic_frame</frameName>
+                <pointCloudCutoff>0.0</pointCloudCutoff>
+                <distortionK1>0.00000001</distortionK1>
+                <distortionK2>0.00000001</distortionK2>
+                <distortionK3>0.00000001</distortionK3>
+                <distortionT1>0.00000001</distortionT1>
+                <distortionT2>0.00000001</distortionT2>
+                <CxPrime>0</CxPrime>
+                <Cx>0</Cx>
+                <Cy>0</Cy>
+                <focalLength>0</focalLength>
+                <hackBaseline>0</hackBaseline>
+            </plugin>
+        </sensor>
     </gazebo>
-
     <link name="ota_base_link">
         <origin rpy=" 0 0 0" xyz="0 0 0" />
         <visual>
@@ -889,12 +880,12 @@
             <wheelTorque>20</wheelTorque>
             <wheelAcceleration>1.8</wheelAcceleration>
             <commandTopic>cmd_vel</commandTopic>
-            <odometryTopic>odom</odometryTopic>
-            <odometryFrame>odom</odometryFrame>
+            <odometryTopic>sim_odom</odometryTopic>
+            <odometryFrame>sim_odom</odometryFrame>
             <odometrySource>world</odometrySource>
             <robotBaseFrame>ota_base_link</robotBaseFrame>
             <legacyMode>true</legacyMode>
-            <publishTf>true</publishTf>
+            <publishTf>false</publishTf>
             <updateRate>50.0</updateRate>
         </plugin>
     </gazebo>

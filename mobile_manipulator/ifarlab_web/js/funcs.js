@@ -13,6 +13,7 @@ document.getElementById("mr_ui_sensor").value = 2.457
 
 // Get the modal
 var emgmodal = document.getElementById("emgModal");
+emgmodal.style.display = "none";
 
 // Get the modal
 var commodal = document.getElementById("comModal");

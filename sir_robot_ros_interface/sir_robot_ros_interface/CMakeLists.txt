@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  tf
 )
 
 find_package(Eigen3 REQUIRED)
@@ -83,7 +84,6 @@ install(
 
 
 add_executable(KawasakiRobotTestForLinux tests/KawasakiRobotTestForLinux.cpp)
-
 target_link_libraries(KawasakiRobotTestForLinux ${catkin_LIBRARIES} sir_robot_ros_interface)
 
 add_dependencies(KawasakiRobotTestForLinux ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
@@ -108,18 +108,26 @@ add_dependencies(KawasakiRobotTestForLinux_Valu3s ${catkin_EXPORTED_TARGETS} ${$
 add_executable(KawasakiRobotTestForLinux_Valu3s_ino_2 tests/KawasakiRobotTestForLinux_Valu3s_ino_2.cpp)
 #MEOZKAN - the following line was added 20.03.2023
 add_executable(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop tests/KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop.cpp)
+add_executable(KawasakiRobot_safetyStop_test tests/KawasakiRobot_safetyStop_test.cpp)
 
 target_link_libraries(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_LIBRARIES} sir_robot_ros_interface)
 #MEOZKAN - the following line was added 20.03.2023
 target_link_libraries(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop ${catkin_LIBRARIES} sir_robot_ros_interface)
+target_link_libraries(KawasakiRobot_safetyStop_test ${catkin_LIBRARIES} sir_robot_ros_interface)
+
 
 add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 #MEOZKAN - the following line was added 20.03.2023
 add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
-
+add_dependencies(KawasakiRobot_safetyStop_test ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
 add_executable(KawasakiRobotJointPublisher tests/KawasakiRobotJointPublisher.cpp)
+add_executable(kawasaki_joints_real_to_sim tests/kawasaki_joints_real_to_sim.cpp)
+add_executable(kawasaki_kinematics_tf tests/kawasaki_kinematics_tf.cpp)
 
 target_link_libraries(KawasakiRobotJointPublisher ${catkin_LIBRARIES} sir_robot_ros_interface)
+target_link_libraries(kawasaki_joints_real_to_sim ${catkin_LIBRARIES} sir_robot_ros_interface)
+target_link_libraries(kawasaki_kinematics_tf ${catkin_LIBRARIES} sir_robot_ros_interface)
 
 add_dependencies(KawasakiRobotJointPublisher ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
+add_dependencies(kawasaki_joints_real_to_sim ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})

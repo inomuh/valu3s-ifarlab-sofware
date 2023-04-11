@@ -21,6 +21,9 @@ EIGEN_DEFINE_STL_VECTOR_SPECIALIZATION(SIRMatrix)
 
 ros::Publisher JointPosePublisher;
 
+int uiEmergency = 0;
+int buttonEmergency = 0;
+
 using namespace std;
   SIRLogger *logger = new SIRLogger("log.txt", SIRLOGLEVEL::LOGLEVEL_DEBUG);
   SIRConnection *con = new SIRLinConnection(logger,"192.168.3.7",11111);
@@ -28,6 +31,7 @@ using namespace std;
   //KawasakiRS005LRobot robot(con, logger,nullptr, MPT_TASK, MT_LINEAR);
 
   int cancel_data = 0;
+  
 
 //MEOZKAN - BEGIN
   class distListener{
@@ -47,11 +51,17 @@ using namespace std;
 //MEOZKAN - END
 
 
-
-
 void cancelCallback(const std_msgs::Int8::ConstPtr& msg)
 {
     cancel_data = msg->data;
+}
+
+void uiEmergencyCallback(const std_msgs::Int8::ConstPtr& msg){
+    uiEmergency = msg->data;
+}
+
+void buttonEmergencyCallback(const std_msgs::Int8::ConstPtr& msg){
+    buttonEmergency = msg->data;
 }
 
 OTA_STATE state = OTA_STATE_WAIT;
@@ -61,25 +71,34 @@ float rad2deg(float radian){
     return degree;
 }
 
+// Check matching of position and fposes
 bool checkCorrectStop(SIRMatrix poses, SIRMatrix pos){
     float th = 1.0;
+    int wrong_position_count = 0;
     for (int i = 0; i < 6; i++) {
-        if ((abs(abs(poses(i)) - abs(pos(i))) > th)){
-            return false;
-        }
+      if ((abs(abs(poses(i)) - abs(pos(i))) > th)){
+        wrong_position_count = wrong_position_count + 1;
+      }
     }
-    return true;
+    if (wrong_position_count > 0){
+      return false;
+    }
+    else{
+      return true;
+    }
 }
+
 
 bool pathExists(const std::string& path) {
     std::ifstream file(path.c_str());
     return file.good();
 }
 
+
 bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
          sir_robot_ros_interface::ManipulatorPose_ino_2::Response &res)
 {
-    std::cout<< req.path << std::endl;
+    // std::cout<< req.path << std::endl;
 
     std::ifstream file(req.path);
     std::string line;
@@ -87,12 +106,12 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
 
     if(!pathExists(req.path)) //Exits the program and outputs this message if the file is not found
     {
-        std::cout << "File not found." << std::endl;
+        // std::cout << "File not found." << std::endl;
         res.status = "NoFile";
         robot.close();
         return true;
     }
-    ros::Rate loop_rate(30);
+    ros::Rate loop_rate(15);
 
     std::getline(file, line); // Read and discard the first line
 
@@ -113,57 +132,33 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
 
     if(state==OTA_STATE_WAIT){
       if (data.empty() == false){
-        std::cout << "OTA has arrived" << std::endl;
+        // std::cout << "OTA has arrived" << std::endl;
         state = OTA_STATE_OPERATE;
       }
       else{
-        std::cout << "Waiting for OTA arrival" << std::endl;
+        // std::cout << "Waiting for OTA arrival" << std::endl;
       }
 
     }
     if(state==OTA_STATE_OPERATE){
         if (!robot.Connect()) {
-            cout << "Could not connect to robot..." << endl;
+            // std::cout << "Could not connect to robot..." << endl;
             return 0;
         }
         else
-            cout << "Connected..." << endl;
+            // std::cout << "Connected..." << endl;
         //********* CONNECTED **************
 
         con->setBlockingMode(0);
         robot.setWaitForCommand(2000);
         //sleep(2);
 
-        //open Gripper
-        if (robot.setSignal(1,false))
-            cout << "success to set signal..." << endl;
-        else{
-            cout << "fail to set signal...1" << endl;
-            res.status = "abort";
-            robot.close();
-            return true;
-        }
-        if (robot.setSignal(2,false))
-            cout << "success to set signal..." << endl;
-        else{
-            cout << "fail to set signal...2" << endl;
-            res.status = "abort";
-            robot.close();
-            return true;
-        }
-        if (robot.setSignal(1,true))
-            cout << "success to set signal..." << endl;
-        else{
-            cout << "fail to set signal...3" << endl;
-            res.status = "abort";
-            robot.close();
-            return true;
-        }
         SIRMatrix poses(6,1);
         SIRMatrix last_poses(6,1);
+        SIRMatrix current_pose(6,1);
         int count = 0;
 
-        std::cout<< data.size() << std::endl;
+        // std::cout<< data.size() << std::endl;
 
         for (int i = 0; i < data.size(); ++i) {
             float pose1 = rad2deg(std::stof(data[i][0]));
@@ -174,57 +169,38 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             float pose6 = rad2deg(std::stof(data[i][5]));
 
             poses<<pose1, pose2, pose3, pose4, pose5, pose6;
-            std::cout<< pose1 <<" "<< pose2 <<" "<< pose3 <<" "<< pose4 <<" "<< pose5 <<" "<< pose6 << std::endl;
+            // std::cout<< pose1 <<" "<< pose2 <<" "<< pose3 <<" "<< pose4 <<" "<< pose5 <<" "<< pose6 << std::endl;
             // std::cout<< poses << std::endl;
-            last_poses = poses;
+            // last_poses = poses;
             robot.add(poses);
         }
-
-        // for (auto const& pose_list : req.poses) {
-        //     if ((pose_list.pose.size() % 6) != 0){
-        //         std::cout << pose_list.pose.size() << " on item " << count <<std::endl;
-        //         res.status = "Wrong Input Lenght";
-        //         return true;
-        //     }
-//
-        //     SIRMatrix poses(6,1);
-        //     poses<<pose_list.pose[0], pose_list.pose[1], pose_list.pose[2], pose_list.pose[3], pose_list.pose[4], pose_list.pose[5];
-        //     last_poses = poses;
-        //     count++;
-        //     robot.add(poses);
-        // }
 
         robot.setSpeed(9.0);
 
         if (robot.move())
-            cout << "the robot is moving" << endl;
+            // std::cout << "the robot is moving" << endl;
+            int filler2 = 1;
         else{
-            cout << "the robot is not moving" << endl;
+            // std::cout << "the robot is not moving" << endl;
             res.status = "abort";
             robot.close();
             return true;
         }
 
         //MEOZKAN-BEGIN
-        int flag = 0;
-        bool sig=false;
+        bool HOLD = false;
         //MEOZKAN-END
 
+		bool retry_connection = false;
+        bool emg_stop = false;
+        bool endTask = false;
+        
+        // std::cout <<"Before while"<<endl;
         //hareketin bitimini bekle...
-        while(true){
-            //sleep(1);
-        //    std::cout<<cancel_data<<std::endl;
-        //    if (cancel_data == 1){
-        //       cout << "fail to set signal...4" << endl;
-        //       res.status = "abort";
-        //       robot.close();
-        //       break;
-        //    }
-        //     ros::spinOnce();
-        //    loop_rate.sleep();
-
-        // Publish Joint States
-
+        while (ros::ok()){
+        // while (((robot.getStatus()!=RS_STOP) && (!HOLD)) || (HOLD)){
+            
+          // Publish Joint States
             SIRMatrix joint_pose(6,1);
             robot.getJointPose(&joint_pose);
 
@@ -237,61 +213,134 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             msg.data[4] = joint_pose(4);
             msg.data[5] = joint_pose(5);
 
-            cout <<"Joints == "<< msg<<endl;
-
+            // cout <<"Joints == "<< msg<<endl;
             JointPosePublisher.publish(msg);
 
-            //MEOZKAN-BEGIN
-            if((dist_listener.danger_level == 1)&&(flag==0)){
+            // Get robot status
+            auto robot_status = robot.getStatus(); // RS_STOP 0 RS_MOVE 1 RS_UNKNOWN 2
+            // std::cout <<"RS STATUS = "<< robot_status <<endl;
+
+			// Check Emergency conditions
+            // UI Emergency Stop
+            if (((dist_listener.danger_level == 1)||((uiEmergency==1)))&&(HOLD==false)){
                 robot.hold();
-                flag = 1;
+                HOLD = true;
+                // std::cout <<"------UI HOLD------"<<endl;
             }
 
-            if((dist_listener.danger_level == 0)&&(flag==1)){
-                robot.cont();
-                flag = 0;
+            // Button Emergency Stop
+            if (((buttonEmergency==1))&&(emg_stop==false)){
+                emg_stop = true;
+                // std::cout <<"------Emergency STOP------"<<endl;
             }
+
+            // UI Continue
+            if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(HOLD==true)&&(emg_stop==false)){
+                robot.cont();
+                uiEmergency = 2;
+                HOLD = false;
+                // std::cout <<"------UI CONTINUE------"<<endl;
+            }
+
+            // Reconnect
+            if (((emg_stop==true) && (retry_connection==false)) || (robot_status==RS_UNKNOWN)){
+                if (!robot.Connect()){
+                    // std::cout<<"------CONNECTION FAILED------"<< endl;
+                    continue;
+                }
+                else{
+                    // std::cout<<"------CONNECTED------"<< endl;
+                    con->setBlockingMode(0);
+                    retry_connection = true;
+                }
+            }
+
+            // Emergecy Continue
+            if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(emg_stop==true)&&(retry_connection==true)){
+                // std::cout <<"------Emergency CONTINUE------"<<endl;
+                
+                for (int i = 0; i < data.size(); ++i){
+                    float pose1 = rad2deg(std::stof(data[i][0]));
+                    float pose2 = rad2deg(std::stof(data[i][1]));
+                    float pose3 = rad2deg(std::stof(data[i][2]));
+                    float pose4 = rad2deg(std::stof(data[i][3]));
+                    float pose5 = rad2deg(std::stof(data[i][4]));
+                    float pose6 = rad2deg(std::stof(data[i][5]));   
+                    poses<<pose1, pose2, pose3, pose4, pose5, pose6;
+                    // std::cout<< pose1 <<" "<< pose2 <<" "<< pose3 <<" "<< pose4 <<" "<< pose5 <<" "<< pose6 << std::endl;
+                    // std::cout<< poses << std::endl;
+                    robot.add(poses);
+                    }
+
+                if (robot.move()){
+                    emg_stop = false;
+                    HOLD = false;
+                    // std::cout << "the robot is moving again" << endl;
+                    uiEmergency = 2;
+                }
+                else{
+                    // std::cout << "the robot is not moving after emergency stop" << endl;
+                    continue;
+                    // res.status = "abort";
+                    // robot.close();
+                    // return true;
+                }
+            }
+
+		
+            // std::cout <<"HOLD = "<< HOLD<<endl;
             
-            robot.setSignal(1,sig);
-            if(sig)
-            	sig=false;
-            else
-               sig=true;
-               
-            //MEOZKAN-END
-            if (robot.getStatus()==RS_STOP && !flag){
+            // cout <<"CHECK == "<< checkCorrectStop(last_poses, joint_pose)<<endl;
+
+            // Check RS Positions
+            float pose1 = rad2deg(std::stof(data[0][0]));
+            float pose2 = rad2deg(std::stof(data[0][1]));
+            float pose3 = rad2deg(std::stof(data[0][2]));
+            float pose4 = rad2deg(std::stof(data[0][3]));
+            float pose5 = rad2deg(std::stof(data[0][4]));
+            float pose6 = rad2deg(std::stof(data[0][5]));
+            current_pose<<pose1, pose2, pose3, pose4, pose5, pose6;
+
+            // Check current position matching then remove passed positions
+            if (checkCorrectStop(current_pose, joint_pose) == true){
+                if (data.size() > 1){
+                    data.erase(data.begin());
+                }
+                else{
+                    endTask = true;
+                }
+                
+            }
+
+            // std::cout <<"Data Size = "<< data.size()<<endl;
+            
+            // Task Completed
+            if ((robot_status==RS_STOP) && (!HOLD) && (uiEmergency!=1) && (buttonEmergency==0) && (endTask == true)){
+                // std::cout<<"------EXIT------"<< endl;
                 break;
             }
+            // std::cout <<"UI = "<< uiEmergency <<endl;
+            // std::cout <<"Button = "<< buttonEmergency <<endl;
+            // std::cout <<"------"<<endl;
 
+            //MEOZKAN-END
+          //  if (robot.getStatus()==RS_STOP && !flag){
+          //      break;
+          //  }
+            //robot.setSignal(1,true);
+            
+           // robot.setSignal(1,false);
+
+            //cout<<"service "<<dist_listener.danger_level<<endl;
             ros::spinOnce();
             loop_rate.sleep();
         }
 
-        SIRMatrix pos(6,1);
-        robot.getJointPose(&pos);
-
-        if (checkCorrectStop(last_poses, pos) == false){
-            cout << "stopped at wrong position" << endl;
-            res.status = "abort";
-            robot.close();
-            return true;
-        }
-
-
-        if (robot.setSignal(1,false))
-            cout << "success to set signal..." << endl;
-        else{
-            cout << "fail to set signal...4" << endl;
-            res.status = "abort";
-            robot.close();
-            return true;
-        }
-        //sleep(2);
-
         if (robot.close())
-            cout << "The connection is succesfully closed..." << endl;
+            // std::cout << "The connection is succesfully closed..." << endl;
+            int filler = 1;
         else{
-            cout << "The connection is not succesfully closed..." << endl;
+            // std::cout << "The connection is not succesfully closed..." << endl;
             res.status = "abort";
             robot.close();
             return true;
@@ -309,28 +358,45 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
   return true;
 }
 
+
 int main(int argc, char **argv) {
+    //SIRConnection *con = new SIRLinConnection(logger,"127.0.0.1",7777);
+    //con->setBlockingMode(1);
 
+    ros::init(argc, argv, "khi_ota_comm");
 
-  //SIRConnection *con = new SIRLinConnection(logger,"127.0.0.1",7777);
-  //con->setBlockingMode(1);
+    ros::NodeHandle n;
 
-  ros::init(argc, argv, "khi_ota_comm");
+    JointPosePublisher = n.advertise<std_msgs::Float64MultiArray>("joint_poses", 1000);
+    ros::ServiceServer service = n.advertiseService("manipulator_service", add);
+    ros::Subscriber sub = n.subscribe("manipulator/cancel", 1000, cancelCallback);
+    ros::Subscriber sub2 = n.subscribe("ui_emg", 1000, uiEmergencyCallback);
+    ros::Subscriber sub3 = n.subscribe("emg", 1000, buttonEmergencyCallback);
 
-  ros::NodeHandle n;
+    //MEOZKAN - BEGIN
+    sub = n.subscribe("danger", 100, &distListener::safetyCallback, &dist_listener);
+    // std::cout<<"heyyyyyyyyyyyyy"<<std::endl;
+    //MEOZKAN - END
+    robot.Connect();
+    SIRMatrix joint_pose(6,1);
+    robot.getJointPose(&joint_pose);
+    std_msgs::Float64MultiArray msg;
+    msg.data.resize(6);
+    msg.data[0] = joint_pose(0);
+    msg.data[1] = joint_pose(1);
+    msg.data[2] = joint_pose(2);
+    msg.data[3] = joint_pose(3);
+    msg.data[4] = joint_pose(4);
+    msg.data[5] = joint_pose(5);
+    for(int i=0;i<10;i++){
+        JointPosePublisher.publish(msg);
+        sleep(1);
+    }
+    if (robot.close())
+        // std::cout << "The connection is succesfully closed..." << endl;
+    ros::spin();
 
-  JointPosePublisher = n.advertise<std_msgs::Float64MultiArray>("joint_poses", 1000);
-  ros::ServiceServer service = n.advertiseService("manipulator_service", add);
-  ros::Subscriber sub = n.subscribe("manipulator/cancel", 1000, cancelCallback);
-
-//MEOZKAN - BEGIN
-  sub = n.subscribe("danger", 100, &distListener::safetyCallback, &dist_listener);
-//MEOZKAN - END
-
-  ros::spin();
-
-  return 0;
+    return 0;
 }
 
 #endif
-

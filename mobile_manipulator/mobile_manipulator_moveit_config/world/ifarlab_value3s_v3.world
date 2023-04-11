@@ -1774,10 +1774,10 @@
         </link>
       </model>
       <model name='ifarlab_bus'>
-        <pose>1.935 -0.861944 0 0 -0 3.14159</pose>
+        <pose>1.935 -0.861944 0.425 0 -0 3.14159</pose>
         <scale>1 1 1</scale>
         <link name='link_0'>
-          <pose>1.935 -0.861944 0 0 -0 3.14159</pose>
+          <pose>1.935 -0.861944 0.425 0 -0 3.14159</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -1920,7 +1920,7 @@
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>5.2637 0.395216 0 0 -0 0</pose>
+      <pose>1.935 -0.861944 0.425 0 -0 3.14159</pose>
     </model>
   </world>
 </sdf>

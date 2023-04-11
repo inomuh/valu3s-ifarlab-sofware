@@ -13,30 +13,30 @@ Right_Rokos:
     Tag: ARKA
     Task_ID: 352691
     Vehicle_CODE: 13M38_1
-#- Task:
-#    Mode: 1
-#    Position:
-#      X: 0.8
-#      Y: -0.5
-#      Z: 1.16
-#      pitch: 0.0
-#      roll: 1.570796
-#      yaw: 0.0
-#    Tag: ARKA
-#    Task_ID: 352692
-#    Vehicle_CODE: 13M38_1
-#- Task:
-#    Mode: 1
-#    Position:
-#      X: 1.55
-#      Y: -0.5
-#      Z: 1.16
-#      pitch: 0.0
-#      roll: 1.570796
-#      yaw: 0.0
-#    Tag: ARKA
-#    Task_ID: 352701
-#    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 0.8
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352692
+    Vehicle_CODE: 13M38_1
+- Task:
+    Mode: 1
+    Position:
+      X: 1.55
+      Y: -0.5
+      Z: 1.16
+      pitch: 0.0
+      roll: 1.570796
+      yaw: 0.0
+    Tag: ARKA
+    Task_ID: 352701
+    Vehicle_CODE: 13M38_1
 - Task:
     Mode: 1
     Position:

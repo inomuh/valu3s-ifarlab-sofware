@@ -121,8 +121,6 @@ add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2 ${catkin_EXPORTED_TARGET
 add_dependencies(KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 add_dependencies(KawasakiRobot_safetyStop_test ${catkin_EXPORTED_TARGETS} ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
-
-
 add_executable(KawasakiRobotJointPublisher tests/KawasakiRobotJointPublisher.cpp)
 add_executable(kawasaki_joints_real_to_sim tests/kawasaki_joints_real_to_sim.cpp)
 add_executable(kawasaki_kinematics_tf tests/kawasaki_kinematics_tf.cpp)

@@ -69,13 +69,10 @@ roslaunch srvt_moveit start_simulation_system.launch
 ~<user>/<workspace>/src/mobile_manipulator/ifarlab_web/index_v2.html
 ```
 
-# Contributing
-#### !!! Work in Progress !!!
-
-# The Authors
+# The Contributors
 - [Didem Özüpek Taş](https://github.com/DidemOzupekTas) 
 - [Furkan Edizkan](https://github.com/FurkanEdizkan)
 
-# References
+## License
 
-#### !!! Work in Progress !!!
+See [LICENSE-APACHE](LICENSE-APACHE) and [LICENSE-MIT](LICENSE-MIT) for details.

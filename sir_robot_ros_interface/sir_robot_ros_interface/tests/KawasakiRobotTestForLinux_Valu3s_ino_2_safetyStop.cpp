@@ -194,6 +194,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
 		bool retry_connection = false;
         bool emg_stop = false;
         bool endTask = false;
+        bool danger = false;
         
         // std::cout <<"Before while"<<endl;
         //hareketin bitimini bekle...
@@ -221,11 +222,14 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             // std::cout <<"RS STATUS = "<< robot_status <<endl;
 
 			// Check Emergency conditions
+
+            // Camera Danger Stop
+
             // UI Emergency Stop
             if (((dist_listener.danger_level == 1)||((uiEmergency==1)))&&(HOLD==false)){
                 robot.hold();
                 HOLD = true;
-                // std::cout <<"------UI HOLD------"<<endl;
+                std::cout <<"____UI HOLD____"<<std::endl;
             }
 
             // Button Emergency Stop
@@ -234,12 +238,14 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
                 // std::cout <<"------Emergency STOP------"<<endl;
             }
 
-            // UI Continue
-            if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(HOLD==true)&&(emg_stop==false)){
+            // Continue
+            // if (((dist_listener.danger_level==0)&&(danger=true))||((dist_listener.danger_level==0)&&((uiEmergency==0)&&(buttonEmergency==0)))&&(HOLD==true)&&(emg_stop==false)){
+            // if (((dist_listener.danger_level==0)&&(danger==true))||((dist_listener.danger_level == 0)&&((uiEmergency==0)&&(buttonEmergency==0))&&(HOLD==true)&&(emg_stop))){
+            if(((dist_listener.danger_level == 0)&&((uiEmergency!=1) && (buttonEmergency==0)))&&(HOLD==true)&&(emg_stop==false)){
                 robot.cont();
                 uiEmergency = 2;
                 HOLD = false;
-                // std::cout <<"------UI CONTINUE------"<<endl;
+                std::cout <<"____UI CONTINUE____"<<std::endl;
             }
 
             // Reconnect

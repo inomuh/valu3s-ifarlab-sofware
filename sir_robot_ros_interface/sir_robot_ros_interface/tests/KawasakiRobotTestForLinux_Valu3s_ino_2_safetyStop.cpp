@@ -27,7 +27,7 @@ int buttonEmergency = 0;
 using namespace std;
   SIRLogger *logger = new SIRLogger("log.txt", SIRLOGLEVEL::LOGLEVEL_DEBUG);
   SIRConnection *con = new SIRLinConnection(logger,"192.168.3.7",11111);
-  KawasakiRS005LRobot robot(con, logger,nullptr, MPT_JOINT, MT_P2P);
+  KawasakiRS005LRobot robot(con, logger,nullptr, MPT_JOINT, MT_SCAN);
   //KawasakiRS005LRobot robot(con, logger,nullptr, MPT_TASK, MT_LINEAR);
 
   int cancel_data = 0;
@@ -225,7 +225,7 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
             if (((dist_listener.danger_level == 1)||((uiEmergency==1)))&&(HOLD==false)){
                 robot.hold();
                 HOLD = true;
-                // std::cout <<"------UI HOLD------"<<endl;
+                // std::cout <<"____UI HOLD____"<<std::endl;
             }
 
             // Button Emergency Stop
@@ -234,12 +234,12 @@ bool add(sir_robot_ros_interface::ManipulatorPose_ino_2::Request  &req,
                 // std::cout <<"------Emergency STOP------"<<endl;
             }
 
-            // UI Continue
-            if(((dist_listener.danger_level == 0)&&((uiEmergency==0) && (buttonEmergency==0)))&&(HOLD==true)&&(emg_stop==false)){
+            // Continue System
+            if(((dist_listener.danger_level == 0)&&((uiEmergency!=1) && (buttonEmergency==0)))&&(HOLD==true)&&(emg_stop==false)){
                 robot.cont();
                 uiEmergency = 2;
                 HOLD = false;
-                // std::cout <<"------UI CONTINUE------"<<endl;
+                // std::cout <<"____UI CONTINUE____"<<std::endl;
             }
 
             // Reconnect

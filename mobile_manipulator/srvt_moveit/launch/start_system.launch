@@ -11,7 +11,11 @@
 	<node name="manipulator_move" pkg="sir_robot_ros_interface" type="KawasakiRobotTestForLinux_Valu3s_ino_2_safetyStop"/>
 	<node name="joint_publisher" pkg="sir_robot_ros_interface" type="KawasakiRobotJointPublisher"/>
 	<node name="kawasaki_kinematics_tf" pkg="sir_robot_ros_interface" type="kawasaki_kinematics_tf"/>
-	<!-- <include file="$(find mobile_manipulator_description)/launch/gazebo_w_description.launch"/> -->
+	<node name="digital_twin_odt" pkg="valu3s_tools" type="digital_twin_odt.py"/>
+	<node name="digital_twin_odt_dist" pkg="valu3s_tools" type="odtChangeSize"/>
+	<node name="digital_twin_move_robot" pkg="valu3s_tools" type="move_robot.py"/>
+	<node name="ip_cam_to_ros" pkg="valu3s_tools" type="ip_cam_to_ros.py"/>
+	<include file="$(find mobile_manipulator_description)/launch/gazebo_w_description.launch"/> 
 
 
 </launch>

@@ -92,6 +92,7 @@ class RokosGetTasksState(smach.State):
         rospy.Subscriber("emg", Int8, self.emg_callback)
         rospy.Subscriber("ui_emg", Int8, self.ui_emg_callback)
         self.toggle_option = None
+        self.action_killer = False
         GeneralSelectionState.rokos_type = self.rokos_type
 
 
@@ -135,15 +136,20 @@ class RokosGetTasksState(smach.State):
                     GeneralSelectionState.time_start = datetime.now()
                     self.ui_start_button = 0
                     response = 'succeeded'
+                    self.action_killer = False
                     #return 'succeeded'
 
                 else:
                     print("Wait_Task")
                     time.sleep(1)
                     response = 'aborted'
+                    if not self.action_killer:
+                        rosnode.kill_nodes(['mp_action_server'])
+                        self.action_killer = True
                     #return 'aborted'
             else:
                 response = 'succeeded'
+                
                 #return 'succeeded'
             return response
         except Exception as err:

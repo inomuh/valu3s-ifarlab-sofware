@@ -27,7 +27,7 @@ int buttonEmergency = 0;
 using namespace std;
   SIRLogger *logger = new SIRLogger("log.txt", SIRLOGLEVEL::LOGLEVEL_DEBUG);
   SIRConnection *con = new SIRLinConnection(logger,"192.168.3.7",11111);
-  KawasakiRS005LRobot robot(con, logger,nullptr, MPT_JOINT, MT_P2P);
+  KawasakiRS005LRobot robot(con, logger,nullptr, MPT_JOINT, MT_SCAN);
   //KawasakiRS005LRobot robot(con, logger,nullptr, MPT_TASK, MT_LINEAR);
 
   int cancel_data = 0;
